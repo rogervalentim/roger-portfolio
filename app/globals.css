@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+  --background: #000319;
+  --foreground: #171717;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.border-header {
+  position: relative;
+  border: 1px solid transparent;
+  border-radius: 13px;
+  background:
+    linear-gradient(to right, #04071d, #0c0e23) padding-box,
+    linear-gradient(to right, #6971a2 16%, #272a3c 37%) border-box;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.grid-pattern {
+  background: url("/grid-pattern.svg");
+  background-position: center;
+  background-size: cover;
+  background-position: no-repeat;
+}
+
+.background {
+  background: url("/background.png");
+  background-position: center;
+  background-size: cover;
+  background-position: no-repeat;
+}
+
+.background-blur {
+  background: url("/blur.svg");
+  background-position: left;
+  background-size: cover;
+  background-position: no-repeat;
+}
+
+.container {
+  margin: 0 auto;
+  width: 90%;
+
+  @media (min-width: 576px) {
+    max-width: 540px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 720px;
+  }
+
+  @media (min-width: 992px) {
+    max-width: 1280px;
+  }
+}
