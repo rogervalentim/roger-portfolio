@@ -6,8 +6,12 @@ export const About = () => {
       <section className="pb-[150px]">
         <div className="container">
           <div className="flex flex-col gap-6 lg:flex-row lg:gap-[30px] justify-between md:items-stretch">
-            <div className="w-full h-[360px] md:h-auto lg:w-[50%] pl-10 pr-10 pb-[60px]  rounded-[23px] bg-[url('/services.png')] bg-center bg-cover flex items-end">
-              <h2 className="max-w-[393px] w-full text-white text-[32px] font-bold leading-[120%] tracking-[-1%]">
+            <div
+              className="w-full h-[400px] md:h-auto border border-[#3637496e] lg:w-[50%] pl-10 pr-10 pb-[60px]  rounded-[23px] 
+  bg-[linear-gradient(to_top,rgba(4,7,29,1),rgba(4,7,29,0)),url('/services.png')]
+    bg-cover bg-center bg-no-repeat flex items-end"
+            >
+              <h2 className="max-w-[300px] md:max-w-[393px] w-full text-white text-[20px] md:text-[32px] font-bold leading-[120%] tracking-[-1%]">
                 Entrego projetos modernos, otimizados e feitos para impulsionar
                 seu negócio
               </h2>
@@ -20,7 +24,7 @@ export const About = () => {
   "
               >
                 <div className="rounded-[23px] bg-linear-to-r from-[#04071D] to-[#0C0E23]  w-full p-10">
-                  <h2 className="font-bold text-3xl text-white leading-[120%] tracking-[-1%]">
+                  <h2 className="font-bold text-[20px] md:text-3xl text-white leading-[120%] tracking-[-1%]">
                     Como posso ajudar seu projeto
                   </h2>
                   <ul className="mt-8 flex flex-col gap-4">
@@ -94,7 +98,7 @@ export const About = () => {
                   <p className="leading-[120%] text-[#C1C2D3]">
                     Eu estou sempre elevando meu nível.
                   </p>
-                  <h2 className=" text-white text-[32px] font-bold leading-[120%] tracking-[-1%] mt-2.5">
+                  <h2 className=" text-white text-[20px] md:text-3xl  font-bold leading-[120%] tracking-[-1%] mt-2.5">
                     Minha stack de tecnologias
                   </h2>
                   <div className="flex flex-wrap gap-3 mt-4">
@@ -160,7 +164,7 @@ export const About = () => {
                     <div className="flex justify-end items-end">
                       <Image
                         src={"/section-input.svg"}
-                        alt="search input"
+                        alt="imagem ilustrativa"
                         width={176}
                         height={390}
                       />
@@ -189,7 +193,8 @@ export const About = () => {
                       >
                         <a
                           href=""
-                          className="rounded-[7px] flex justify-center items-center gap-[5px]  bg-linear-to-r from-[#161A31] to-[#06091F] max-w-[197px] h-10 w-full text-[#E4ECFF] leading-[120%] tracking-[-0.48px] text-sm"
+                          className="rounded-[7px] flex justify-center items-center gap-[5px]  bg-linear-to-r from-[#161A31] to-[#06091F] hover:bg-linear-to-r hover:from-[#1B2B6B] hover:to-[#0A0F3A]
+  transition-all duration-300 max-w-[197px] h-10 w-full text-[#E4ECFF] hover:text-white leading-[120%] tracking-[-0.48px] text-sm"
                         >
                           <div>
                             <svg
@@ -203,13 +208,13 @@ export const About = () => {
                                 d="M2.83331 4.389C2.83331 3.97639 2.99722 3.58068 3.28898 3.28892C3.58074 2.99716 3.97645 2.83325 4.38906 2.83325H9.44423C9.64853 2.83325 9.85084 2.87349 10.0396 2.95168C10.2283 3.02986 10.3998 3.14446 10.5443 3.28892C10.6888 3.43339 10.8034 3.60489 10.8816 3.79364C10.9597 3.98239 11 4.1847 11 4.389V9.44417C11 9.64847 10.9597 9.85078 10.8816 10.0395C10.8034 10.2283 10.6888 10.3998 10.5443 10.5443C10.3998 10.6887 10.2283 10.8033 10.0396 10.8815C9.85084 10.9597 9.64853 10.9999 9.44423 10.9999H4.38906C4.18476 10.9999 3.98246 10.9597 3.7937 10.8815C3.60495 10.8033 3.43345 10.6887 3.28898 10.5443C3.14452 10.3998 3.02992 10.2283 2.95174 10.0395C2.87355 9.85078 2.83331 9.64847 2.83331 9.44417V4.389Z"
                                 stroke="#E4ECFF"
                                 strokeLinecap="round"
-                                stroke-linejoin="round"
+                                strokeLinejoin="round"
                               />
                               <path
                                 d="M1.09033 8.51325C0.91145 8.41127 0.762659 8.26387 0.659002 8.08596C0.555345 7.90804 0.500497 7.70591 0.5 7.5V1.66667C0.5 1.025 1.025 0.5 1.66667 0.5H7.5C7.9375 0.5 8.1755 0.724583 8.375 1.08333"
                                 stroke="#E4ECFF"
                                 strokeLinecap="round"
-                                stroke-linejoin="round"
+                                strokeLinejoin="round"
                               />
                             </svg>
                           </div>
@@ -230,11 +235,11 @@ export const About = () => {
             >
               <div className="rounded-[23px]  w-full h-[300px] lg:h-full bg-linear-to-r from-[#04071D] to-[#0C0E23]">
                 <div className="flex items-center h-full background">
-                  <div className="flex flex-col items-start justify-center w-full lg:w-[50%] pl-[43px]">
+                  <div className="flex flex-col items-start justify-center w-full lg:w-[50%] pl-7 lg:pl-[43px]">
                     <p className="text-[#E4ECFF] opacity-100 uppercase leading-[120%] tracking-[15%]">
-                      The Inside Scoop
+                      Minha Atuação Hoje
                     </p>
-                    <h2 className="text-[20px] md:text-[32px] text-white max-w-[311px] font-bold leading-[120%] mt-4 tracking-[-1%]">
+                    <h2 className="text-[20px] md:text-[32px] text-white max-w-[311px] font-bold leading-normal md:leading-[120%] mt-4 tracking-[-1%]">
                       Atualmente desenvolvendo landing pages modernas e de alta
                       performance
                     </h2>
