@@ -7,7 +7,7 @@ export const About = () => {
         <div className="container">
           <div className="flex flex-col gap-6 lg:flex-row lg:gap-[30px] justify-between md:items-stretch">
             <div
-              className="w-full h-[400px] md:h-auto border border-[#3637496e] lg:w-[50%] pl-10 pr-10 pb-[60px]  rounded-[23px] 
+              className="w-full h-[312px] lg:h-auto border border-[#3637496e] lg:w-[50%] pl-10 pr-10 pb-[60px]  rounded-[23px] 
   bg-[linear-gradient(to_top,rgba(4,7,29,1),rgba(4,7,29,0)),url('/services.png')]
     bg-cover bg-center bg-no-repeat flex items-end"
             >
