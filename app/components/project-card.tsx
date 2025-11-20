@@ -1,16 +1,5 @@
 import Image from "next/image";
-
-interface Tech {
-  id: string;
-  icon: React.ReactNode;
-}
-interface ProjectCardProps {
-  title: string;
-  description: string;
-  image: string;
-  link: string;
-  techs: Tech[];
-}
+import { ProjectCardProps } from "../types";
 
 export function ProjectCard({
   title,
@@ -42,7 +31,7 @@ export function ProjectCard({
               alt={title}
               width={449}
               height={319}
-              className="rotate-[-2.63deg] rounded-[10px]"
+              className="rotate-[-2.63deg] rounded-[10px] w-full h-[229px] md:h-[319px]"
             />
           </div>
 
