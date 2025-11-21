@@ -1,10 +1,10 @@
 export const Footer = () => {
   return (
-    <footer className="container flex justify-between items-center pb-10">
+    <footer className="container flex flex-col justify-center gap-[25px] md:gap-0 md:flex-row  md:justify-between items-center pb-10">
       <p className="text-sm font-regular text-white  leading-6">
         Copyright &copy;2025 Roger valentim
       </p>
-      <div className="flex gap-2.5">
+      <div className="flex gap-6">
         <a
           href="https://www.github.com/rogervalentim"
           title="Clique aqui e veja o meu Github"

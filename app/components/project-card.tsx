@@ -30,7 +30,7 @@ export function ProjectCard({
               alt={title}
               width={449}
               height={319}
-              className="rotate-[-2.63deg] rounded-[10px] h-full w-full"
+              className="rotate-[-2.63deg] rounded-[10px] object-contain"
             />
           </div>
 

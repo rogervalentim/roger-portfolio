@@ -30,9 +30,11 @@ export default function Home() {
         <Header />
         <Hero />
       </div>
+      <main>
       <About />
       <Projects />
       <Experience />
+      </main>
       <div className="pattern">
         <Cta />
         <Footer />
