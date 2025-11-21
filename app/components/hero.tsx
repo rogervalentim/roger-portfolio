@@ -1,18 +1,21 @@
 export const Hero = () => {
   return (
-    <section className="py-16  md:pt-[123px] md:pb-[156px]">
+    <section className="py-16  md:pt-[123px] md:pb-[156px]" id="inicio">
       <div className="container flex justify-center items-center flex-col">
         <p className="text-[rgb(228,236,255)] text-center text-[12px] md:text-[16px] uppercase tracking-[25%] leading-[120%] ">
-          Inovando na Web com Front-End de Alta Performance
+          Construindo Interfaces Modernas e Performáticas
         </p>
 
         <h1 className="text-white text-center font-bold text-5xl md:text-7xl mt-5 leading-none md:leading-[100%] md:tracking-[-3.6px] w-full max-w-[938px]">
-          Transformando Conceitos em
-          <span className="text-[#CBACF9]"> Experiências de Usuário</span>
+          Transformando Ideias em{" "}
+          <span className="text-[#CBACF9]">
+            Experiências Digitais Impactantes
+          </span>
         </h1>
 
-        <p className="text-[16px] md:text-2xl text-center leading-normal md:leading-[120%] text-[#E4ECFF] mt-[30px]">
-          Olá eu sou o Roger, Desenvolvedor front end , moro em São Paulo Sp
+        <p className="text-[16px] md:text-2xl text-center leading-normal md:leading-[120%] text-[#E4ECFF] mt-[30px] max-w-[750px]">
+          Olá! Sou o Roger, Desenvolvedor Front-End de São Paulo, especializado
+          em criar produtos digitais modernos, rápidos e centrados no usuário.
         </p>
         <div
           className="

@@ -23,7 +23,6 @@ export function ProjectCard({
           flex flex-col justify-between
         "
       >
-        {/* Conteúdo do topo */}
         <div>
           <div className="bg-[#13162D] overflow-hidden md:h-[330px] rounded-[14px] pt-[30px] pl-[45px] pr-[42px]">
             <Image
@@ -31,7 +30,7 @@ export function ProjectCard({
               alt={title}
               width={449}
               height={319}
-              className="rotate-[-2.63deg] rounded-[10px] w-full h-[229px] md:h-[319px]"
+              className="rotate-[-2.63deg] rounded-[10px] h-full w-full"
             />
           </div>
 
@@ -44,7 +43,6 @@ export function ProjectCard({
           </p>
         </div>
 
-        {/* Rodapé alinhado */}
         <div className="flex justify-between items-center mt-6">
           <div className="flex">
             {techs.map((tech) => (

@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --background: #000319;
   --foreground: #171717;
@@ -22,6 +26,13 @@ body {
 
 .grid-pattern {
   background: url("/grid-pattern.svg");
+  background-position: center;
+  background-size: cover;
+  background-position: no-repeat;
+}
+
+.pattern {
+  background: url("/pattern.png");
   background-position: center;
   background-size: cover;
   background-position: no-repeat;
@@ -56,4 +67,18 @@ body {
   @media (min-width: 992px) {
     max-width: 1280px;
   }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 8px #25d366;
+  }
+  50% {
+    box-shadow: 0 0 18px #25d366;
+  }
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
 }

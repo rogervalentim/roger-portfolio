@@ -3,7 +3,7 @@ import Image from "next/image";
 export const About = () => {
   return (
     <>
-      <section className="pb-[150px]">
+      <section className="pb-[150px]" id="sobre">
         <div className="container">
           <div className="flex flex-col gap-6 lg:flex-row lg:gap-[30px] justify-between md:items-stretch">
             <div
@@ -28,7 +28,7 @@ export const About = () => {
                     Como posso ajudar seu projeto
                   </h2>
                   <ul className="mt-8 flex flex-col gap-4">
-                    <li className=" leading-[120%] text-[#C1C2D3] flex gap-3 items-center">
+                    <li className=" leading-[120%] text-[#C1C2D3] flex gap-6 items-center">
                       <div>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +42,7 @@ export const About = () => {
                       </div>
                       Desenvolvimento de sites com foco em SEO
                     </li>
-                    <li className=" leading-[120%] text-[#C1C2D3] flex gap-3 items-center">
+                    <li className=" leading-[120%] text-[#C1C2D3] flex gap-6 items-center">
                       <div>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +56,7 @@ export const About = () => {
                       </div>
                       Posicionamento orgânico nos mecanismos de busca
                     </li>
-                    <li className="leading-[120%] text-[#C1C2D3] flex gap-3 items-center">
+                    <li className="leading-[120%] text-[#C1C2D3] flex gap-6 items-center">
                       <div>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +70,7 @@ export const About = () => {
                       </div>
                       Manutenção e otimização contínua de sites
                     </li>
-                    <li className=" leading-[120%] text-[#C1C2D3] flex gap-3 items-center">
+                    <li className=" leading-[120%] text-[#C1C2D3] flex gap-6 items-center">
                       <div>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -101,7 +101,7 @@ export const About = () => {
                   <h2 className=" text-white text-[20px] md:text-3xl  font-bold leading-[120%] tracking-[-1%] mt-2.5">
                     Minha stack de tecnologias
                   </h2>
-                  <div className="flex flex-wrap gap-3 mt-4">
+                  <div className="flex flex-wrap gap-6 mt-4">
                     <div className="bg-[#10132E] h-8 p-5 flex items-center justify-center rounded-[6.97px]">
                       <p className="text-white text-sm font-semibold leading-[18.6px]">
                         HTML
@@ -181,7 +181,7 @@ export const About = () => {
               >
                 <div className="rounded-[23px]  max-w-full w-full lg:w-[351px] overflow-hidden  bg-[#06091F]">
                   <div className="background-blur">
-                    <div className="flex justify-center items-center flex-col gap-3 pb-[34px]">
+                    <div className="flex justify-center items-center flex-col gap-6 pb-[34px]">
                       <h3 className="text-[24px] pt-[26px] md:text-2xl max-w-[241px] font-bold leading-[120%] tracking-[-1%] text-white">
                         Você quer começar um projeto juntos?
                       </h3>
@@ -192,33 +192,24 @@ export const About = () => {
   "
                       >
                         <a
-                          href=""
+                          href="/Roger-Valentim-Curriculo.pdf"
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="rounded-[7px] flex justify-center items-center gap-[5px]  bg-linear-to-r from-[#161A31] to-[#06091F] hover:bg-linear-to-r hover:from-[#1B2B6B] hover:to-[#0A0F3A]
   transition-all duration-300 max-w-[197px] h-10 w-full text-[#E4ECFF] hover:text-white leading-[120%] tracking-[-0.48px] text-sm"
                         >
                           <div>
                             <svg
-                              width="12"
-                              height="12"
-                              viewBox="0 0 12 12"
-                              fill="none"
                               xmlns="http://www.w3.org/2000/svg"
+                              width="20"
+                              height="20"
+                              fill="#e4ecff"
+                              viewBox="0 0 256 256"
                             >
-                              <path
-                                d="M2.83331 4.389C2.83331 3.97639 2.99722 3.58068 3.28898 3.28892C3.58074 2.99716 3.97645 2.83325 4.38906 2.83325H9.44423C9.64853 2.83325 9.85084 2.87349 10.0396 2.95168C10.2283 3.02986 10.3998 3.14446 10.5443 3.28892C10.6888 3.43339 10.8034 3.60489 10.8816 3.79364C10.9597 3.98239 11 4.1847 11 4.389V9.44417C11 9.64847 10.9597 9.85078 10.8816 10.0395C10.8034 10.2283 10.6888 10.3998 10.5443 10.5443C10.3998 10.6887 10.2283 10.8033 10.0396 10.8815C9.85084 10.9597 9.64853 10.9999 9.44423 10.9999H4.38906C4.18476 10.9999 3.98246 10.9597 3.7937 10.8815C3.60495 10.8033 3.43345 10.6887 3.28898 10.5443C3.14452 10.3998 3.02992 10.2283 2.95174 10.0395C2.87355 9.85078 2.83331 9.64847 2.83331 9.44417V4.389Z"
-                                stroke="#E4ECFF"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              />
-                              <path
-                                d="M1.09033 8.51325C0.91145 8.41127 0.762659 8.26387 0.659002 8.08596C0.555345 7.90804 0.500497 7.70591 0.5 7.5V1.66667C0.5 1.025 1.025 0.5 1.66667 0.5H7.5C7.9375 0.5 8.1755 0.724583 8.375 1.08333"
-                                stroke="#E4ECFF"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              />
+                              <path d="M224,144v64a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V144a8,8,0,0,1,16,0v56H208V144a8,8,0,0,1,16,0Zm-101.66,5.66a8,8,0,0,0,11.32,0l40-40a8,8,0,0,0-11.32-11.32L136,124.69V32a8,8,0,0,0-16,0v92.69L93.66,98.34a8,8,0,0,0-11.32,11.32Z"></path>
                             </svg>
                           </div>
-                          Entre em contato
+                          Baixar CV
                         </a>
                       </div>
                     </div>

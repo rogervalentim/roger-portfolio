@@ -3,12 +3,14 @@ import { Header } from "./components/header";
 import { Hero } from "./components/hero";
 import { About } from "./components/about";
 import { Projects } from "./components/projects";
+import { Experience } from "./components/experience";
+import { Cta } from "./components/cta";
+import { Footer } from "./components/footer";
 
 export default function Home() {
   return (
     <>
       <div className="relative w-full grid-pattern">
-        {/* Spotlight no topo esquerdo */}
         <Image
           src="/spotlight.svg"
           width={0}
@@ -25,12 +27,16 @@ export default function Home() {
           className="absolute top-0 right-0 w-full h-auto md:max-w-[805px] md:h-[608px] -z-10 scale-x-[-1]"
         />
 
-        {/* Conteúdo principal */}
         <Header />
         <Hero />
       </div>
       <About />
       <Projects />
+      <Experience />
+      <div className="pattern">
+        <Cta />
+        <Footer />
+      </div>
     </>
   );
 }
