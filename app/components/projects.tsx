@@ -3,7 +3,7 @@ import { ProjectCard } from "./project-card";
 export const Projects = () => {
   return (
     <>
-      <section className="container grid-pattern" id="projetos">
+      <section className="container " id="projetos">
         <h1 className="font-bold text-white text-4xl leading-[100%] tracking-[-2px] md:text-5xl text-center">
           Projetos <span className="text-[#CBACF9]">recentes</span>
         </h1>
@@ -176,7 +176,7 @@ Uma aplicação web inspirada no iFood, desenvolvida para simular o processo de 
           <ProjectCard
             title="Cineverse"
             image="/projects/cineverse.jpg"
-            link="https://movies-2-0-94zq-8s7kya4xf-rogervalentims-projects.vercel.app/"
+            link="https://movies-2-0-94zq.vercel.app/"
             description="
 Um aplicativo web moderno desenvolvido para explorar filmes e séries populares. O projeto inclui interface responsiva, busca integrada, navegação intuitiva e exibição dinâmica de conteúdos em destaque. Focado em usabilidade e design elegante, o CineVerse oferece uma experiência imersiva para descobrir novos títulos de forma simples e agradável.          "
             techs={[

@@ -45,7 +45,7 @@ export function ExperienceCard({
             </div>
 
             <div>
-              <h2 className="font-bold text-[20px] md:text-[26px] leading-[32.5px] tracking-[-1%] text-white">
+              <h2 className="font-bold text-[20px] md:text-[26px] md:leading-[32.5px] tracking-[-1%] text-white">
                 {title}
               </h2>
               <p className="text-sm md:text-[16px] font-medium leading-[130%] text-[#BEC1DD] mt-3">

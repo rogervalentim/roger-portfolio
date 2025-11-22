@@ -1,6 +1,37 @@
+"use client";
+import { useEffect, useState } from "react";
+
 export const Footer = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <footer className="container flex flex-col justify-center gap-[25px] md:gap-0 md:flex-row  md:justify-between items-center pb-10">
+    <footer
+      className={`
+  fixed bottom-0 left-1/2 -translate-x-1/2     
+  md:static md:translate-x-0 md:bottom-auto md:left-auto  
+
+  w-full container
+  py-4 px-4 rounded-t-xl
+  flex flex-col justify-center items-center
+  md:flex-row md:justify-between gap-4
+  transition-all duration-300
+
+  ${
+    scrolled
+      ? "backdrop-blur-md bg-[#000319]/70 border-t border-white/10"
+      : "bg-[#000319] border-transparent"
+  }
+`}
+    >
       <p className="text-sm font-regular text-white  leading-6">
         Copyright &copy;2025 Roger valentim
       </p>
@@ -10,7 +41,7 @@ export const Footer = () => {
           title="Clique aqui e veja o meu Github"
           target="_blank"
           className="rounded-lg  bg-[#05041F]/8
-     shadow-[inset_0_0_8px_0.82px_rgba(255,255,255,0.12)] h-10 w-10 flex justify-center items-center"
+     shadow-[inset_0_0_8px_0.82px_rgba(255,255,255,0.12)] animate-glow-white h-10 w-10 flex justify-center items-center"
         >
           <svg
             width="18"
@@ -30,7 +61,7 @@ export const Footer = () => {
           title="Entre em contato comigo pelo WhatsApp"
           target="_blank"
           className="rounded-lg  bg-[#05041F]/8
-     shadow-[inset_0_0_8px_0.82px_rgba(255,255,255,0.12)] h-10 w-10 flex justify-center items-center"
+     shadow-[inset_0_0_8px_0.82px_rgba(255,255,255,0.12)] h-10 w-10 animate-glow-white flex justify-center items-center"
         >
           <svg
             width="18"
@@ -50,7 +81,7 @@ export const Footer = () => {
           title="Clique aqui e veja o meu Linkedin"
           target="_blank"
           className="rounded-lg  bg-[#05041F]/8
-     shadow-[inset_0_0_8px_0.82px_rgba(255,255,255,0.12)] h-10 w-10 flex justify-center items-center"
+     shadow-[inset_0_0_8px_0.82px_rgba(255,255,255,0.12)] animate-glow-white h-10 w-10 flex justify-center items-center"
         >
           <svg
             width="18"

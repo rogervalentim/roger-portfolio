@@ -31,9 +31,9 @@ export default function Home() {
         <Hero />
       </div>
       <main>
-      <About />
-      <Projects />
-      <Experience />
+        <About />
+        <Projects />
+        <Experience />
       </main>
       <div className="pattern">
         <Cta />

@@ -11,7 +11,7 @@ export const Experience = () => {
         <ExperienceCard
           image="/experince/student-1.svg"
           title="Estagiário desenvolvedor front end"
-          date="21/10/2024 - Atualmente"
+          date="Prime web - 21/10/2024 - Atualmente"
           description="Desenvolvimento de sites com foco em SEO, posicionamento orgânico, manutenção de sites e web design, extração e apresentação de relatórios de desempenho de sites."
         />
         <ExperienceCard

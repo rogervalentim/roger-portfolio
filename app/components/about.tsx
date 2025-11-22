@@ -101,7 +101,7 @@ export const About = () => {
                   <h2 className=" text-white text-[20px] md:text-3xl  font-bold leading-[120%] tracking-[-1%] mt-2.5">
                     Minha stack de tecnologias
                   </h2>
-                  <div className="flex flex-wrap gap-6 mt-4">
+                  <div className="flex flex-wrap gap-2.5 mt-4">
                     <div className="bg-[#10132E] h-8 p-5 flex items-center justify-center rounded-[6.97px]">
                       <p className="text-white text-sm font-semibold leading-[18.6px]">
                         HTML
@@ -110,6 +110,11 @@ export const About = () => {
                     <div className="bg-[#10132E] h-8 p-5 flex items-center justify-center rounded-[6.97px]">
                       <p className="text-white text-sm font-semibold leading-[18.6px]">
                         CSS
+                      </p>
+                    </div>
+                    <div className="bg-[#10132E] h-8 p-5 flex items-center justify-center rounded-[6.97px]">
+                      <p className="text-white text-sm font-semibold leading-[18.6px]">
+                        Tailwind CSS
                       </p>
                     </div>
                     <div className="bg-[#10132E] h-8 p-5 flex items-center justify-center rounded-[6.97px]">
@@ -188,12 +193,13 @@ export const About = () => {
                       <div
                         className="
     relative rounded-[7px] p-px
-    bg-[linear-gradient(to_right,#3637496e,#3637497d)] w-full max-w-[197px]
+    bg-[linear-gradient(to_right,#3637496e,#3637497d)] w-full max-w-[197px] 
   "
                       >
                         <a
                           href="/Roger-Valentim-Curriculo.pdf"
                           target="_blank"
+                          title="baixar cv"
                           rel="noopener noreferrer"
                           className="rounded-[7px] flex justify-center items-center gap-[5px]  bg-linear-to-r from-[#161A31] to-[#06091F] hover:bg-linear-to-r hover:from-[#1B2B6B] hover:to-[#0A0F3A]
   transition-all duration-300 max-w-[197px] h-10 w-full text-[#E4ECFF] hover:text-white leading-[120%] tracking-[-0.48px] text-sm"

@@ -21,7 +21,7 @@ export const Hero = () => {
           className="
    border-header
    rounded-[13px] w-full md:w-[256px]
-    mt-[30px]
+    mt-[30px] 
     "
         >
           <a
