@@ -17,7 +17,7 @@ export const Experience = () => {
         <ExperienceCard
           image="/experince/student-2.svg"
           title="Bacharelado em Engenharia de Software – Anhanguera Educacional"
-          date="01/09/2024 - Atualmente (previsão de conclusão: 01/01/2028)"
+          date="01/09/2024 - Atualmente (previsão de conclusão: 01/01/2028) - 3 semestre"
           description="Graduação focada em desenvolvimento de software, arquitetura de sistemas, engenharia de requisitos e boas práticas de programação. Inclui também fundamentos de usabilidade, performance e qualidade, aplicados ao desenvolvimento de sites e aplicações web."
         />
       </div>

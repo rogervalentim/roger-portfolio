@@ -1,21 +1,7 @@
-"use client";
-import { useEffect, useState } from "react";
-
 export const Footer = () => {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <footer
-      className={`
+      className="
   fixed bottom-0 left-1/2 -translate-x-1/2     
   md:static md:translate-x-0 md:bottom-auto md:left-auto  
 
@@ -25,12 +11,9 @@ export const Footer = () => {
   md:flex-row md:justify-between gap-4
   transition-all duration-300
 
-  ${
-    scrolled
-      ? "backdrop-blur-md bg-[#000319]/70 border-t border-white/10"
-      : "bg-[#000319] border-transparent"
-  }
-`}
+  
+  backdrop-blur-md bg-[#000319]/70 border-t border-white/10
+"
     >
       <p className="text-sm font-regular text-white  leading-6">
         Copyright &copy;2025 Roger valentim
