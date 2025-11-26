@@ -7,7 +7,7 @@ export const Experience = () => {
         Experiência & <span className="text-[#CBACF9]">Formação</span>
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-[70px] w-full">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-[70px] w-full">
         <ExperienceCard
           image="/experince/student-1.svg"
           title="Estagiário desenvolvedor front end"

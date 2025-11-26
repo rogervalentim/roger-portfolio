@@ -12,7 +12,7 @@ export const Footer = () => {
   transition-all duration-300
 
   
-  backdrop-blur-md bg-[#000319]/70 border-t border-white/10
+  backdrop-blur-md bg-[#000319]/70 
 "
     >
       <p className="text-sm font-regular text-white  leading-6">

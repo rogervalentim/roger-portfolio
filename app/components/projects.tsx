@@ -8,7 +8,7 @@ export const Projects = () => {
           Projetos <span className="text-[#CBACF9]">recentes</span>
         </h1>
 
-        <div className="grid grid-cols-1 items-stretch md:grid-cols-2 gap-10 pt-[60px] pb-[150px]">
+        <div className="grid grid-cols-1 items-stretch lg:grid-cols-2 gap-10 pt-[60px] pb-[150px]">
           <ProjectCard
             title="Panto Furniture"
             image="/projects/panto.jpg"
