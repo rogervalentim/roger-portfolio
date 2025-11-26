@@ -6,16 +6,22 @@ export const About = () => {
       <section className="pb-[150px]" id="sobre">
         <div className="container">
           <div className="flex flex-col gap-6 lg:flex-row lg:gap-[30px] justify-between md:items-stretch">
-            <div
-              className="w-full h-[312px] lg:h-auto border border-[#3637496e] lg:w-[50%] pl-10 pr-10 pb-[60px]  rounded-[23px] 
-  bg-[linear-gradient(to_top,rgba(4,7,29,1),rgba(4,7,29,0)),url('/services.png')]
-    bg-cover bg-center bg-no-repeat flex items-end"
-            >
-              <h2 className="max-w-[300px] md:max-w-[393px] w-full text-white text-[20px] md:text-[32px] font-bold leading-[120%] tracking-[-1%]">
+            <div className="relative w-full h-[312px] lg:h-auto lg:w-[50%] border border-[#3637496e] pl-10 pr-10 pb-[60px] rounded-[23px] flex items-end overflow-hidden">
+              <Image
+                src="/services.png"
+                alt="Services"
+                fill
+                className="object-cover"
+                priority={false}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[rgba(4,7,29,1)] to-[rgba(4,7,29,0)]" />
+
+              <h2 className="relative max-w-[300px] md:max-w-[393px] w-full text-white text-[20px] md:text-[32px] font-bold leading-[120%] tracking-[-1%]">
                 Entrego projetos modernos, otimizados e feitos para impulsionar
                 seu negócio
               </h2>
             </div>
+
             <div className="w-full lg:w-[50%] flex flex-col gap-6 md:gap-[30px]">
               <div
                 className="
@@ -226,12 +232,12 @@ export const About = () => {
 
             <div
               className="
-    relative rounded-[23px] p-px
-    bg-[linear-gradient(to_right,#3637496e,#3637497d)] w-full h-auto
-  "
+        relative rounded-[23px] p-px
+        bg-[linear-gradient(to_right,#3637496e,#3637497d)] w-full h-auto
+      "
             >
-              <div className="rounded-[23px]  w-full h-[300px] lg:h-full bg-linear-to-r from-[#04071D] to-[#0C0E23]">
-                <div className="flex items-center h-full background">
+              <div className="rounded-[23px] w-full h-[300px] lg:h-full bg-linear-to-r from-[#04071D] to-[#0C0E23]">
+                <div className="flex items-center h-full">
                   <div className="flex flex-col items-start justify-center w-full lg:w-[50%] pl-7 lg:pl-[43px]">
                     <p className="text-[#E4ECFF] opacity-100 uppercase leading-[120%] tracking-[15%]">
                       Minha Atuação Hoje
@@ -241,7 +247,17 @@ export const About = () => {
                       performance
                     </h2>
                   </div>
-                  <div className="bg-[url('/code.png')] bg-cover bg-center w-full lg:w-[50%] h-full rounded-br-[23px]"></div>
+
+                  {/* Imagem otimizada */}
+                  <div className="relative w-full lg:w-[50%] h-full rounded-br-[23px] overflow-hidden">
+                    <Image
+                      src="/code.png"
+                      alt="Ilustração de código"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
