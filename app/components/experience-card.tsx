@@ -11,7 +11,7 @@ export function ExperienceCard({
     <>
       <div
         className="
-    relative max-w-[600px] w-full rounded-[23px]
+    relative rounded-[23px]
     p-px
 
     bg-[linear-gradient(to_right,rgba(54,55,73,0.43),rgba(54,55,73,0.49))]
@@ -28,7 +28,7 @@ export function ExperienceCard({
       >
         <div
           className="
-      max-w-[600px] rounded-[23px] w-full 
+       rounded-[23px] w-full 
       bg-[linear-gradient(to_right,#04071D,#0C0E23)]
       py-[35px] px-5 lg:px-[52px] lg:pt-[52px] lg:pb-[29px] h-full
     "

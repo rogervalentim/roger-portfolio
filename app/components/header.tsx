@@ -63,7 +63,8 @@ export const Header = () => {
     bg-[#25D366]
     text-white
     w-14 h-14 rounded-full
-    flex items-center justify-center
+    hidden
+    lg:flex items-center justify-center
     shadow-lg
     z-10
     animate-glow

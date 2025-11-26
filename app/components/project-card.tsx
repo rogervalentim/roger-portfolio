@@ -24,7 +24,7 @@ export function ProjectCard({
         "
       >
         <div>
-          <div className="bg-[#13162D] overflow-hidden md:h-[330px] rounded-[14px] pt-[30px] pl-[45px] pr-[42px]">
+          <div className="bg-[#13162D] overflow-hidden flex justify-center items-center md:h-[330px] rounded-[14px] pt-[30px] pl-[45px] pr-[42px]">
             <Image
               src={image}
               alt={title}

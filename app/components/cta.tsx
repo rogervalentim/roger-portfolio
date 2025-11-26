@@ -1,7 +1,7 @@
 export const Cta = () => {
   return (
     <section
-      className="container pt-[70px] pb-[222px] flex flex-col justify-center items-center"
+      className="container pt-[70px] pb-[222px]  flex flex-col justify-center items-center"
       id="contato"
     >
       <h1 className="font-bold text-white text-4xl leading-[100%] max-w-[720px] tracking-[-2px] md:text-5xl text-center">
