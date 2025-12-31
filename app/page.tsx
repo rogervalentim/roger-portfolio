@@ -15,7 +15,7 @@ export default function Home() {
           src="/spotlight.svg"
           width={0}
           height={0}
-          alt="spotlight-left"
+          alt="spotlight left"
           className="absolute top-0 left-0 w-full h-auto md:max-w-[805px] md:h-[608px]  -z-10"
         />
 
@@ -23,7 +23,7 @@ export default function Home() {
           src="/spotlight.svg"
           width={0}
           height={0}
-          alt="spotlight-right"
+          alt="spotlight right"
           className="absolute top-0 right-0 w-full h-auto md:max-w-[805px] md:h-[608px] -z-10 scale-x-[-1]"
         />
 
