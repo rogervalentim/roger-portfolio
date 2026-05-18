@@ -14,7 +14,7 @@ export const About = () => {
                 className="object-cover"
                 priority={false}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[rgba(4,7,29,1)] to-[rgba(4,7,29,0)]" />
+              <div className="absolute inset-0 bg-linear-to-t from-[rgba(4,7,29,1)] to-[rgba(4,7,29,0)]" />
 
               <h2 className="relative max-w-[300px] md:max-w-[393px] w-full text-white text-[20px] md:text-[32px] font-bold leading-[120%] tracking-[-1%]">
                 Entrego projetos modernos, otimizados e feitos para impulsionar
