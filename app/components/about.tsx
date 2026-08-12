@@ -1,0 +1,269 @@
+import Image from "next/image";
+
+export const About = () => {
+  return (
+    <>
+      <section className="pb-[150px]" id="sobre">
+        <div className="container">
+          <div className="flex flex-col gap-6 lg:flex-row lg:gap-[30px] justify-between md:items-stretch">
+            <div className="relative w-full h-[312px] lg:h-auto lg:w-[50%] border border-[#3637496e] pl-10 pr-10 pb-[60px] rounded-[23px] flex items-end overflow-hidden">
+              <Image
+                src="/services.png"
+                alt="Services"
+                fill
+                className="object-cover"
+                priority={false}
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-[rgba(4,7,29,1)] to-[rgba(4,7,29,0)]" />
+
+              <h2 className="relative max-w-[300px] md:max-w-[393px] w-full text-white text-[20px] md:text-[32px] font-bold leading-[120%] tracking-[-1%]">
+                Experiência prática criando interfaces modernas, responsivas e
+                preparadas para evoluir em equipe
+              </h2>
+            </div>
+
+            <div className="w-full lg:w-[50%] flex flex-col gap-6 md:gap-[30px]">
+              <div
+                className="
+    relative rounded-[23px] p-px
+    bg-[linear-gradient(to_right,#3637496e,#3637497d)] 
+  "
+              >
+                <div className="rounded-[23px] bg-linear-to-r from-[#04071D] to-[#0C0E23]  w-full p-10">
+                  <h2 className="font-bold text-[20px] md:text-3xl text-white leading-[120%] tracking-[-1%]">
+                    Como posso contribuir com a equipe
+                  </h2>
+                  <ul className="mt-8 flex flex-col gap-4">
+                    <li className=" leading-[120%] text-[#C1C2D3] flex gap-6 items-center">
+                      <div>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          fill="#ffffff"
+                          viewBox="0 0 256 256"
+                        >
+                          <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+                        </svg>
+                      </div>
+                      Transformação de layouts em interfaces responsivas
+                    </li>
+                    <li className=" leading-[120%] text-[#C1C2D3] flex gap-6 items-center">
+                      <div>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          fill="#ffffff"
+                          viewBox="0 0 256 256"
+                        >
+                          <path d="M223.85,47.12a16,16,0,0,0-15-15c-12.58-.75-44.73.4-71.41,27.07L132.69,64H74.36A15.91,15.91,0,0,0,63,68.68L28.7,103a16,16,0,0,0,9.07,27.16l38.47,5.37,44.21,44.21,5.37,38.49a15.94,15.94,0,0,0,10.78,12.92,16.11,16.11,0,0,0,5.1.83A15.91,15.91,0,0,0,153,227.3L187.32,193A15.91,15.91,0,0,0,192,181.64V123.31l4.77-4.77C223.45,91.86,224.6,59.71,223.85,47.12ZM74.36,80h42.33L77.16,119.52,40,114.34Zm74.41-9.45a76.65,76.65,0,0,1,59.11-22.47,76.46,76.46,0,0,1-22.42,59.16L128,164.68,91.32,128ZM176,181.64,141.67,216l-5.19-37.17L176,139.31Zm-74.16,9.5C97.34,201,82.29,224,40,224a8,8,0,0,1-8-8c0-42.29,23-57.34,32.86-61.85a8,8,0,0,1,6.64,14.56c-6.43,2.93-20.62,12.36-23.12,38.91,26.55-2.5,36-16.69,38.91-23.12a8,8,0,1,1,14.56,6.64Z"></path>
+                        </svg>
+                      </div>
+                      Desenvolvimento com atenção a SEO e performance
+                    </li>
+                    <li className="leading-[120%] text-[#C1C2D3] flex gap-6 items-center">
+                      <div>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          fill="#ffffff"
+                          viewBox="0 0 256 256"
+                        >
+                          <path d="M226.76,69a8,8,0,0,0-12.84-2.88l-40.3,37.19-17.23-3.7-3.7-17.23,37.19-40.3A8,8,0,0,0,187,29.24,72,72,0,0,0,88,96,72.34,72.34,0,0,0,94,124.94L33.79,177c-.15.12-.29.26-.43.39a32,32,0,0,0,45.26,45.26c.13-.13.27-.28.39-.42L131.06,162A72,72,0,0,0,232,96,71.56,71.56,0,0,0,226.76,69ZM160,152a56.14,56.14,0,0,1-27.07-7,8,8,0,0,0-9.92,1.77L67.11,211.51a16,16,0,0,1-22.62-22.62L109.18,133a8,8,0,0,0,1.77-9.93,56,56,0,0,1,58.36-82.31l-31.2,33.81a8,8,0,0,0-1.94,7.1L141.83,108a8,8,0,0,0,6.14,6.14l26.35,5.66a8,8,0,0,0,7.1-1.94l33.81-31.2A56.06,56.06,0,0,1,160,152Z"></path>
+                        </svg>
+                      </div>
+                      Correção de bugs, manutenção e melhorias contínuas
+                    </li>
+                    <li className=" leading-[120%] text-[#C1C2D3] flex gap-6 items-center">
+                      <div>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          fill="#ffffff"
+                          viewBox="0 0 256 256"
+                        >
+                          <path d="M200.77,53.89A103.27,103.27,0,0,0,128,24h-1.07A104,104,0,0,0,24,128c0,43,26.58,79.06,69.36,94.17A32,32,0,0,0,136,192a16,16,0,0,1,16-16h46.21a31.81,31.81,0,0,0,31.2-24.88,104.43,104.43,0,0,0,2.59-24A103.28,103.28,0,0,0,200.77,53.89Zm13,93.71A15.89,15.89,0,0,1,198.21,160H152a32,32,0,0,0-32,32,16,16,0,0,1-21.31,15.07C62.49,194.3,40,164,40,128a88,88,0,0,1,87.09-88h.9a88.35,88.35,0,0,1,88,87.25A88.86,88.86,0,0,1,213.81,147.6ZM140,76a12,12,0,1,1-12-12A12,12,0,0,1,140,76ZM96,100A12,12,0,1,1,84,88,12,12,0,0,1,96,100Zm0,56a12,12,0,1,1-12-12A12,12,0,0,1,96,156Zm88-56a12,12,0,1,1-12-12A12,12,0,0,1,184,100Z"></path>
+                        </svg>
+                      </div>
+                      Colaboração com design, marketing e desenvolvimento
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div
+                className="
+    relative rounded-[23px] p-px
+    bg-[linear-gradient(to_right,#3637496e,#3637497d)]
+  "
+              >
+                <div className="rounded-[23px] bg-linear-to-r from-[#04071D] to-[#0C0E23]  w-full p-10">
+                  <p className="leading-[120%] text-[#C1C2D3]">
+                    Eu estou sempre elevando meu nível.
+                  </p>
+                  <h2 className=" text-white text-[20px] md:text-3xl  font-bold leading-[120%] tracking-[-1%] mt-2.5">
+                    Minha stack de tecnologias
+                  </h2>
+                  <div className="flex flex-wrap gap-2.5 mt-4">
+                    <div className="bg-[#10132E] h-8 p-5 flex items-center justify-center rounded-[6.97px]">
+                      <p className="text-white text-sm font-semibold leading-[18.6px]">
+                        HTML
+                      </p>
+                    </div>
+                    <div className="bg-[#10132E] h-8 p-5 flex items-center justify-center rounded-[6.97px]">
+                      <p className="text-white text-sm font-semibold leading-[18.6px]">
+                        CSS
+                      </p>
+                    </div>
+                    <div className="bg-[#10132E] h-8 p-5 flex items-center justify-center rounded-[6.97px]">
+                      <p className="text-white text-sm font-semibold leading-[18.6px]">
+                        Tailwind CSS
+                      </p>
+                    </div>
+                    <div className="bg-[#10132E] h-8 p-5 flex items-center justify-center rounded-[6.97px]">
+                      <p className="text-white text-sm font-semibold leading-[18.6px]">
+                        JavaScript
+                      </p>
+                    </div>
+                    <div className="bg-[#10132E] h-8 p-5 flex items-center justify-center rounded-[6.97px]">
+                      <p className="text-white text-sm font-semibold leading-[18.6px]">
+                        TypeScript
+                      </p>
+                    </div>
+                    <div className="bg-[#10132E] h-8 p-5 flex items-center justify-center rounded-[6.97px]">
+                      <p className="text-white text-sm font-semibold leading-[18.6px]">
+                        PHP
+                      </p>
+                    </div>
+                    <div className="bg-[#10132E] h-8 p-5 flex items-center justify-center rounded-[6.97px]">
+                      <p className="text-white text-sm font-semibold leading-[18.6px]">
+                        React
+                      </p>
+                    </div>
+                    <div className="bg-[#10132E] h-8 p-5 flex items-center justify-center rounded-[6.97px]">
+                      <p className="text-white text-sm font-semibold leading-[18.6px]">
+                        Next
+                      </p>
+                    </div>
+                    <div className="bg-[#10132E] h-8 p-5 flex items-center justify-center rounded-[6.97px]">
+                      <p className="text-white text-sm font-semibold leading-[18.6px]">
+                        Git
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="pt-10 flex flex-col lg:flex-row gap-[30px] w-full">
+            <div className="flex flex-col gap-[30px]">
+              <div
+                className="
+    relative rounded-[23px] p-px
+    bg-[linear-gradient(to_right,#3637496e,#3637497d)] 
+  "
+              >
+                <div className="rounded-[23px]   max-w-full w-full lg:w-[351px] overflow-hidden pt-[29px] pl-7 bg-linear-to-r from-[#04071D] to-[#0C0E23]">
+                  <div className="background">
+                    <h3 className="text-[20px] md:text-2xl font-bold leading-[120%] tracking-[-1%] text-white">
+                      Entusiasta de tecnologia com paixão por desenvolvimento.
+                    </h3>
+                    <div className="flex justify-end items-end">
+                      <Image
+                        src={"/section-input.svg"}
+                        alt="imagem ilustrativa"
+                        width={176}
+                        height={390}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                className="
+    relative rounded-[23px] p-px
+    bg-[linear-gradient(to_right,#3637496e,#3637497d)] 
+  "
+              >
+                <div className="rounded-[23px]  max-w-full w-full lg:w-[351px] overflow-hidden  bg-[#06091F]">
+                  <div className="background-blur">
+                    <div className="flex justify-center items-center flex-col gap-6 pb-[34px]">
+                      <h3 className="text-[24px] pt-[26px] md:text-2xl max-w-[241px] font-bold leading-[120%] tracking-[-1%] text-white">
+                        Procurando um Front-end para fortalecer o time?
+                      </h3>
+                      <div
+                        className="
+    relative rounded-[7px] p-px
+    bg-[linear-gradient(to_right,#3637496e,#3637497d)] w-full max-w-[197px] 
+  "
+                      >
+                        <a
+                          href="/Roger-Valentim-Curriculo.pdf"
+                          target="_blank"
+                          title="baixar cv"
+                          rel="noopener noreferrer"
+                          className="rounded-[7px] flex justify-center items-center gap-[5px]  bg-linear-to-r from-[#161A31] to-[#06091F] hover:bg-linear-to-r hover:from-[#1B2B6B] hover:to-[#0A0F3A]
+  transition-all duration-300 max-w-[197px] h-10 w-full text-[#E4ECFF] hover:text-white leading-[120%] tracking-[-0.48px] text-sm"
+                        >
+                          <div>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20"
+                              height="20"
+                              fill="#e4ecff"
+                              viewBox="0 0 256 256"
+                            >
+                              <path d="M224,144v64a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V144a8,8,0,0,1,16,0v56H208V144a8,8,0,0,1,16,0Zm-101.66,5.66a8,8,0,0,0,11.32,0l40-40a8,8,0,0,0-11.32-11.32L136,124.69V32a8,8,0,0,0-16,0v92.69L93.66,98.34a8,8,0,0,0-11.32,11.32Z"></path>
+                            </svg>
+                          </div>
+                          Baixar CV
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              className="
+        relative rounded-[23px] p-px
+        bg-[linear-gradient(to_right,#3637496e,#3637497d)] w-full h-auto
+      "
+            >
+              <div className="rounded-[23px] w-full h-[300px] lg:h-full bg-linear-to-r from-[#04071D] to-[#0C0E23]">
+                <div className="flex items-center h-full">
+                  <div className="flex flex-col items-start justify-center w-full lg:w-[50%] pl-7 lg:pl-[43px]">
+                    <p className="text-[#E4ECFF] opacity-100 uppercase leading-[120%] tracking-[15%]">
+                      Minha experiência prática
+                    </p>
+                    <h2 className="text-[20px] md:text-[32px] text-white max-w-[311px] font-bold leading-normal md:leading-[120%] mt-4 tracking-[-1%]">
+                      Desenvolvimento e manutenção de interfaces com foco em SEO,
+                      responsividade e performance
+                    </h2>
+                  </div>
+
+                  {/* Imagem otimizada */}
+                  <div className="relative w-full lg:w-[50%] h-full rounded-br-[23px] overflow-hidden">
+                    <Image
+                      src="/code.png"
+                      alt="Ilustração de código"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
