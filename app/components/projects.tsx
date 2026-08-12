@@ -175,8 +175,8 @@ Uma aplicação web inspirada no iFood, desenvolvida para simular o processo de 
 
           <ProjectCard
             title="Cineverse"
-            image="/projects/cineverse.jpg"
-            link="https://movies-2-0-94zq.vercel.app/"
+            image="/projects/cineverse-1.png"
+            link="https://movies-next-seven.vercel.app/"
             description="
 Um aplicativo web moderno desenvolvido para explorar filmes e séries populares. O projeto inclui interface responsiva, busca integrada, navegação intuitiva e exibição dinâmica de conteúdos em destaque. Focado em usabilidade e design elegante, o CineVerse oferece uma experiência imersiva para descobrir novos títulos de forma simples e agradável.          "
             techs={[
