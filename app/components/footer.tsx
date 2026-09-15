@@ -1,8 +1,10 @@
+import { profile } from "../data/profile";
+
 export const Footer = () => {
   return (
     <footer
       className="
-  fixed bottom-0 left-1/2 -translate-x-1/2     
+  fixed z-20 bottom-0 left-1/2 -translate-x-1/2
   md:static md:translate-x-0 md:bottom-auto md:left-auto  
 
   w-full container
@@ -16,17 +18,18 @@ export const Footer = () => {
 "
     >
       <p className="text-sm font-regular text-white  leading-6">
-        Copyright &copy;2025 Roger valentim
+        Copyright &copy;{new Date().getFullYear()} Roger Valentim
       </p>
       <div className="flex gap-6">
         <a
-          href="https://www.github.com/rogervalentim"
-          title="Clique aqui e veja o meu Github"
+          href={profile.github}
+          aria-label="Clique aqui e veja o meu Github"
           target="_blank"
+          rel="noopener noreferrer"
           className="rounded-lg  bg-[#05041F]/8
-     shadow-[inset_0_0_8px_0.82px_rgba(255,255,255,0.12)] animate-glow-white h-10 w-10 flex justify-center items-center"
+     shadow-[inset_0_0_8px_0.82px_rgba(255,255,255,0.12)] animate-glow-white h-11 w-11 flex justify-center items-center"
         >
-          <svg
+          <svg aria-hidden="true" focusable="false"
             width="18"
             height="18"
             viewBox="0 0 18 18"
@@ -40,13 +43,14 @@ export const Footer = () => {
           </svg>
         </a>
         <a
-          href="https://wa.me/5511976069285"
-          title="Entre em contato comigo pelo WhatsApp"
+          href={profile.whatsapp}
+          aria-label="Entre em contato comigo pelo WhatsApp"
           target="_blank"
+          rel="noopener noreferrer"
           className="rounded-lg  bg-[#05041F]/8
-     shadow-[inset_0_0_8px_0.82px_rgba(255,255,255,0.12)] h-10 w-10 animate-glow-white flex justify-center items-center"
+     shadow-[inset_0_0_8px_0.82px_rgba(255,255,255,0.12)] h-11 w-11 animate-glow-white flex justify-center items-center"
         >
-          <svg
+          <svg aria-hidden="true" focusable="false"
             width="18"
             height="18"
             viewBox="0 0 16 16"
@@ -60,13 +64,14 @@ export const Footer = () => {
           </svg>
         </a>
         <a
-          href="https://www.linkedin.com/in/rogervalentim33"
-          title="Clique aqui e veja o meu Linkedin"
+          href={profile.linkedin}
+          aria-label="Clique aqui e veja o meu Linkedin"
           target="_blank"
+          rel="noopener noreferrer"
           className="rounded-lg  bg-[#05041F]/8
-     shadow-[inset_0_0_8px_0.82px_rgba(255,255,255,0.12)] animate-glow-white h-10 w-10 flex justify-center items-center"
+     shadow-[inset_0_0_8px_0.82px_rgba(255,255,255,0.12)] animate-glow-white h-11 w-11 flex justify-center items-center"
         >
-          <svg
+          <svg aria-hidden="true" focusable="false"
             width="18"
             height="18"
             viewBox="0 0 18 18"

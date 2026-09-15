@@ -1,14 +1,12 @@
-export interface Tech {
-  id: string;
-  icon: React.ReactNode;
-}
-
 export interface ProjectCardProps {
+  id: string;
   title: string;
   description: string;
   image: string;
   link: string;
-  techs: Tech[];
+  technologies: string[];
+  features: string[];
+  githubUrl?: string;
 }
 
 export interface ExperienceCardProps {

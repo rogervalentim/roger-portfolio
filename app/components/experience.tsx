@@ -2,17 +2,17 @@ import { ExperienceCard } from "./experience-card";
 
 export const Experience = () => {
   return (
-    <section className="container py-[70px]" id="experiencia">
-      <h1 className="font-bold text-white text-4xl leading-[100%] tracking-[-2px] md:text-5xl text-center">
+    <section className="container py-[70px]" id="experiencia" aria-labelledby="experience-title">
+      <h2 id="experience-title" className="font-bold text-white text-4xl leading-[100%] tracking-[-2px] md:text-5xl text-center">
         Experiência & <span className="text-[#CBACF9]">Formação</span>
-      </h1>
+      </h2>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-[70px]">
         <ExperienceCard
           image="/experince/student-1.svg"
-          title="Estagiário desenvolvedor front end"
+          title="Estagiário de Desenvolvimento Front-End"
           date="Prime web - 21/10/2024 - 18/05/2026"
-          description="Desenvolvimento de sites com foco em SEO, posicionamento orgânico, manutenção de sites e web design, extração e apresentação de relatórios de desempenho de sites."
+          description="Implementação de layouts do Figma em páginas responsivas com HTML, CSS, JavaScript e PHP. Desenvolvimento e manutenção de interfaces, correção de bugs, melhorias de SEO e análise de relatórios de desempenho."
         />
         <ExperienceCard
           image="/experince/student-2.svg"

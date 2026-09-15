@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ExperienceCardProps } from "../types";
+import type { ExperienceCardProps } from "../types";
 
 export function ExperienceCard({
   title,
@@ -9,7 +9,7 @@ export function ExperienceCard({
 }: ExperienceCardProps) {
   return (
     <>
-      <div
+      <article
         className="
     relative rounded-[23px]
     p-px
@@ -37,7 +37,7 @@ export function ExperienceCard({
             <div className="w-[94px] h-[87px] flex items-center justify-center shrink-0">
               <Image
                 src={image}
-                alt={title}
+                alt=""
                 width="94"
                 height="87"
                 className="object-contain"
@@ -45,9 +45,9 @@ export function ExperienceCard({
             </div>
 
             <div>
-              <h2 className="font-bold text-[20px] md:text-[26px] md:leading-[32.5px] tracking-[-1%] text-white">
+              <h3 className="font-bold text-[20px] md:text-[26px] md:leading-[32.5px] tracking-[-1%] text-white">
                 {title}
-              </h2>
+              </h3>
               <p className="text-sm md:text-[16px] font-medium leading-[130%] text-[#BEC1DD] mt-3">
                 {date}
               </p>
@@ -57,7 +57,7 @@ export function ExperienceCard({
             </div>
           </div>
         </div>
-      </div>
+      </article>
     </>
   );
 }

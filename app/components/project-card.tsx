@@ -1,85 +1,34 @@
 import Image from "next/image";
-import { ProjectCardProps } from "../types";
+import type { ProjectCardProps } from "../types";
+import { ArrowIcon } from "./action-link";
+import { TechBadge } from "./tech-badge";
 
-export function ProjectCard({
-  title,
-  description,
-  image,
-  link,
-  techs
-}: ProjectCardProps) {
+export function ProjectCard({ id, title, description, image, link, technologies, features, githubUrl }: ProjectCardProps) {
   return (
-    <div
-      className="
-        relative rounded-[23px] p-px
-        bg-[linear-gradient(to_right,#3637496e,#3637497d)]
-      "
-    >
-      <div
-        className="
-          w-full h-full py-9 px-6
-          bg-[linear-gradient(to_right,#04071D,#0C0E23)]
-          rounded-[23px]
-          flex flex-col justify-between
-        "
-      >
+    <article aria-labelledby={id + "-title"} className="relative min-w-0 rounded-[23px] p-px bg-[linear-gradient(to_right,#3637496e,#3637497d)]">
+      <div className="w-full h-full py-9 px-6 bg-[linear-gradient(to_right,#04071D,#0C0E23)] rounded-[23px] flex flex-col justify-between">
         <div>
-          <div className="bg-[#13162D] overflow-hidden flex justify-center items-center md:h-[330px] rounded-[14px] pt-[30px] pl-[45px] pr-[42px]">
-            <Image
-              src={image}
-              alt={title}
-              width={449}
-              height={319}
-              className="rotate-[-2.63deg] rounded-[10px] object-contain"
-            />
+          <div className="relative aspect-[449/319] md:aspect-auto md:h-[330px] bg-[#13162D] overflow-hidden flex justify-center items-center rounded-[14px] pt-[30px] pl-[45px] pr-[42px]">
+            <div className="relative h-full w-full rotate-[-2.63deg]">
+              <Image src={image} alt={"Interface do projeto " + title} fill className="rounded-[10px] object-cover object-top" sizes="(max-width: 576px) 65vw, (max-width: 768px) 400px, (max-width: 1024px) 580px, (max-width: 1422px) 34vw, 490px" />
+            </div>
           </div>
-
-          <h2 className="text-[20px] md:text-[32px] font-bold text-white leading-9 tracking-[-2%] mt-9">
-            {title}
-          </h2>
-
-          <p className="text-[#BEC1DD] text-sm mt-[18px] md:text-[20px] leading-[130%]">
-            {description}
-          </p>
+          <h3 id={id + "-title"} className="text-[20px] md:text-[32px] font-bold text-white leading-9 tracking-[-2%] mt-9">{title}</h3>
+          <p className="text-[#BEC1DD] text-sm mt-[18px] md:text-[20px] leading-[140%]">{description}</p>
+          <ul className="mt-5 flex flex-wrap gap-2" aria-label={"Tecnologias de " + title}>
+            {technologies.map((technology) => <li key={technology}><TechBadge>{technology}</TechBadge></li>)}
+          </ul>
+          <ul className="mt-5 list-inside list-disc space-y-2 text-sm leading-relaxed text-[#C1C2D3]" aria-label={"Funcionalidades de " + title}>
+            {features.map((feature) => <li key={feature}>{feature}</li>)}
+          </ul>
         </div>
-
-        <div className="flex justify-between items-center mt-6">
-          <div className="flex">
-            {techs.map((tech) => (
-              <div
-                key={tech.id}
-                className="
-                  relative p-px
-                  bg-[linear-gradient(to_right,#3637496e,#3637497d)] 
-                  w-[50px] h-[50px] rounded-full
-                "
-              >
-                <div className="bg-[linear-gradient(to_right,#04071D,#0C0E23)] w-[50px] h-[50px] rounded-full flex justify-center items-center">
-                  {tech.icon}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <a
-            className="font-medium text-[20px] text-[#CBACF9] leading-[120%] tracking-[0.48px] hover:underline flex items-center gap-2.5"
-            href={link}
-            target="_blank"
-            title={`Clique aqui para ver o site ${title}`}
-          >
-            Ver site
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              fill="#CBACF9"
-              viewBox="0 0 256 256"
-            >
-              <path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z" />
-            </svg>
+        <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2">
+          <a className="inline-flex min-h-11 items-center gap-2.5 text-[18px] font-medium leading-[120%] text-[#CBACF9] hover:underline" href={link} target="_blank" rel="noopener noreferrer" aria-label={"Ver projeto " + title}>
+            Ver projeto <ArrowIcon />
           </a>
+          {githubUrl && <a href={githubUrl} target="_blank" rel="noopener noreferrer" aria-label={"Código de " + title + " no GitHub"} className="inline-flex min-h-11 items-center text-[#C1C2D3] hover:text-white hover:underline">GitHub</a>}
         </div>
       </div>
-    </div>
+    </article>
   );
 }

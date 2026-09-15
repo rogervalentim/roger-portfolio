@@ -1,12 +1,14 @@
+import { profile } from "../data/profile";
+
 export const Header = () => {
   return (
-    <header className="w-full container flex justify-center items-center pt-[50px]">
-      <nav className="bg-linear-to-r from-[#04071D] to-[#0C0E23] border-header border w-full max-w-[451px] h-16 flex justify-center items-center">
-        <ul className="flex items-center justify-between gap-4 lg:gap-8">
+    <header className="absolute inset-x-0 top-0 z-10 w-full container flex justify-center items-center pt-[50px]">
+      <nav aria-label="Navegação principal" className="bg-linear-to-r from-[#04071D] to-[#0C0E23] border-header border w-full max-w-[451px] h-16 flex justify-center items-center">
+        <ul className="flex items-center justify-between gap-3 sm:gap-4 lg:gap-8">
           <li>
             <a
               href="#inicio"
-              className="font-medium text-sm md:text-[16px] text-[#C1C2D3] hover:text-white tracking-[-0.48px] leading-[110%]"
+              className="inline-flex min-h-11 items-center font-medium text-[12px] sm:text-sm md:text-[16px] text-[#C1C2D3] hover:text-white tracking-[-0.48px] leading-[110%]"
               title="Início"
             >
               Início
@@ -16,7 +18,7 @@ export const Header = () => {
           <li>
             <a
               href="#sobre"
-              className="font-medium text-sm md:text-[16px] text-[#C1C2D3] hover:text-white tracking-[-0.48px] leading-[110%]"
+              className="inline-flex min-h-11 items-center font-medium text-[12px] sm:text-sm md:text-[16px] text-[#C1C2D3] hover:text-white tracking-[-0.48px] leading-[110%]"
               title="Sobre"
             >
               Sobre
@@ -26,7 +28,7 @@ export const Header = () => {
           <li>
             <a
               href="#projetos"
-              className="font-medium text-sm md:text-[16px] text-[#C1C2D3] hover:text-white tracking-[-0.48px] leading-[110%]"
+              className="inline-flex min-h-11 items-center font-medium text-[12px] sm:text-sm md:text-[16px] text-[#C1C2D3] hover:text-white tracking-[-0.48px] leading-[110%]"
               title="Projetos"
             >
               Projetos
@@ -36,7 +38,7 @@ export const Header = () => {
           <li>
             <a
               href="#experiencia"
-              className="font-medium text-sm md:text-[16px] text-[#C1C2D3] hover:text-white tracking-[-0.48px] leading-[110%]"
+              className="inline-flex min-h-11 items-center font-medium text-[12px] sm:text-sm md:text-[16px] text-[#C1C2D3] hover:text-white tracking-[-0.48px] leading-[110%]"
               title="Experiência"
             >
               Experiência
@@ -46,7 +48,7 @@ export const Header = () => {
           <li>
             <a
               href="#contato"
-              className="font-medium text-sm md:text-[16px] text-[#C1C2D3] hover:text-white tracking-[-0.48px] leading-[110%]"
+              className="inline-flex min-h-11 items-center font-medium text-[12px] sm:text-sm md:text-[16px] text-[#C1C2D3] hover:text-white tracking-[-0.48px] leading-[110%]"
               title="Contato"
             >
               Contato
@@ -55,7 +57,7 @@ export const Header = () => {
         </ul>
       </nav>
       <a
-        href="https://wa.me/5511976069285"
+        href={profile.whatsapp}
         target="_blank"
         rel="noopener noreferrer"
         className="
@@ -69,9 +71,9 @@ export const Header = () => {
     z-10
     animate-glow
   "
-        title="Fale comigo no WhatsApp"
+        aria-label="Fale comigo no WhatsApp"
       >
-        <svg
+        <svg aria-hidden="true" focusable="false"
           width="28"
           height="28"
           viewBox="0 0 16 16"

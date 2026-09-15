@@ -1,161 +1,61 @@
 import Image from "next/image";
+import { activities, profile } from "../data/profile";
+import { TechnologyStack } from "./technology-stack";
 
 export const About = () => {
   return (
     <>
-      <section className="pb-[150px]" id="sobre">
+      <section
+        className="pb-[100px] md:pb-[150px]"
+        id="sobre"
+        aria-labelledby="about-title"
+      >
         <div className="container">
+          <h2 id="about-title" className="sr-only">
+            Sobre Roger Valentim
+          </h2>
           <div className="flex flex-col gap-6 lg:flex-row lg:gap-[30px] justify-between md:items-stretch">
-            <div className="relative w-full h-[312px] lg:h-auto lg:w-[50%] border border-[#3637496e] pl-10 pr-10 pb-[60px] rounded-[23px] flex items-end overflow-hidden">
+            <div className="relative w-full  lg:max-h-auto lg:w-[50%] border border-[#3637496e] pl-10 pr-10 pb-[60px] rounded-[23px] flex items-end overflow-hidden">
               <Image
                 src="/services.png"
-                alt="Services"
+                alt=""
                 fill
                 className="object-cover"
-                priority={false}
+                sizes="(max-width: 768px) 90vw, (max-width: 1024px) 720px, (max-width: 1422px) 44vw, 625px"
               />
               <div className="absolute inset-0 bg-linear-to-t from-[rgba(4,7,29,1)] to-[rgba(4,7,29,0)]" />
-
-              <h2 className="relative max-w-[300px] md:max-w-[393px] w-full text-white text-[20px] md:text-[32px] font-bold leading-[120%] tracking-[-1%]">
-                Entrego projetos modernos, otimizados e feitos para impulsionar
-                seu negócio
-              </h2>
+              <p className="relative max-w-[300px] md:max-w-[393px] w-full text-white text-[20px] md:text-[32px] font-bold leading-[120%] tracking-[-1%]">
+                Transformo designs em interfaces funcionais.
+              </p>
             </div>
-
             <div className="w-full lg:w-[50%] flex flex-col gap-6 md:gap-[30px]">
-              <div
-                className="
-    relative rounded-[23px] p-px
-    bg-[linear-gradient(to_right,#3637496e,#3637497d)] 
-  "
+              <section
+                aria-labelledby="activities-title"
+                className="relative rounded-[23px] p-px bg-[linear-gradient(to_right,#3637496e,#3637497d)]"
               >
-                <div className="rounded-[23px] bg-linear-to-r from-[#04071D] to-[#0C0E23]  w-full p-10">
-                  <h2 className="font-bold text-[20px] md:text-3xl text-white leading-[120%] tracking-[-1%]">
-                    Como posso ajudar seu projeto
-                  </h2>
-                  <ul className="mt-8 flex flex-col gap-4">
-                    <li className=" leading-[120%] text-[#C1C2D3] flex gap-6 items-center">
-                      <div>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          fill="#ffffff"
-                          viewBox="0 0 256 256"
-                        >
-                          <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
-                        </svg>
-                      </div>
-                      Desenvolvimento de sites com foco em SEO
-                    </li>
-                    <li className=" leading-[120%] text-[#C1C2D3] flex gap-6 items-center">
-                      <div>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          fill="#ffffff"
-                          viewBox="0 0 256 256"
-                        >
-                          <path d="M223.85,47.12a16,16,0,0,0-15-15c-12.58-.75-44.73.4-71.41,27.07L132.69,64H74.36A15.91,15.91,0,0,0,63,68.68L28.7,103a16,16,0,0,0,9.07,27.16l38.47,5.37,44.21,44.21,5.37,38.49a15.94,15.94,0,0,0,10.78,12.92,16.11,16.11,0,0,0,5.1.83A15.91,15.91,0,0,0,153,227.3L187.32,193A15.91,15.91,0,0,0,192,181.64V123.31l4.77-4.77C223.45,91.86,224.6,59.71,223.85,47.12ZM74.36,80h42.33L77.16,119.52,40,114.34Zm74.41-9.45a76.65,76.65,0,0,1,59.11-22.47,76.46,76.46,0,0,1-22.42,59.16L128,164.68,91.32,128ZM176,181.64,141.67,216l-5.19-37.17L176,139.31Zm-74.16,9.5C97.34,201,82.29,224,40,224a8,8,0,0,1-8-8c0-42.29,23-57.34,32.86-61.85a8,8,0,0,1,6.64,14.56c-6.43,2.93-20.62,12.36-23.12,38.91,26.55-2.5,36-16.69,38.91-23.12a8,8,0,1,1,14.56,6.64Z"></path>
-                        </svg>
-                      </div>
-                      Posicionamento orgânico nos mecanismos de busca
-                    </li>
-                    <li className="leading-[120%] text-[#C1C2D3] flex gap-6 items-center">
-                      <div>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          fill="#ffffff"
-                          viewBox="0 0 256 256"
-                        >
-                          <path d="M226.76,69a8,8,0,0,0-12.84-2.88l-40.3,37.19-17.23-3.7-3.7-17.23,37.19-40.3A8,8,0,0,0,187,29.24,72,72,0,0,0,88,96,72.34,72.34,0,0,0,94,124.94L33.79,177c-.15.12-.29.26-.43.39a32,32,0,0,0,45.26,45.26c.13-.13.27-.28.39-.42L131.06,162A72,72,0,0,0,232,96,71.56,71.56,0,0,0,226.76,69ZM160,152a56.14,56.14,0,0,1-27.07-7,8,8,0,0,0-9.92,1.77L67.11,211.51a16,16,0,0,1-22.62-22.62L109.18,133a8,8,0,0,0,1.77-9.93,56,56,0,0,1,58.36-82.31l-31.2,33.81a8,8,0,0,0-1.94,7.1L141.83,108a8,8,0,0,0,6.14,6.14l26.35,5.66a8,8,0,0,0,7.1-1.94l33.81-31.2A56.06,56.06,0,0,1,160,152Z"></path>
-                        </svg>
-                      </div>
-                      Manutenção e otimização contínua de sites
-                    </li>
-                    <li className=" leading-[120%] text-[#C1C2D3] flex gap-6 items-center">
-                      <div>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          fill="#ffffff"
-                          viewBox="0 0 256 256"
-                        >
-                          <path d="M200.77,53.89A103.27,103.27,0,0,0,128,24h-1.07A104,104,0,0,0,24,128c0,43,26.58,79.06,69.36,94.17A32,32,0,0,0,136,192a16,16,0,0,1,16-16h46.21a31.81,31.81,0,0,0,31.2-24.88,104.43,104.43,0,0,0,2.59-24A103.28,103.28,0,0,0,200.77,53.89Zm13,93.71A15.89,15.89,0,0,1,198.21,160H152a32,32,0,0,0-32,32,16,16,0,0,1-21.31,15.07C62.49,194.3,40,164,40,128a88,88,0,0,1,87.09-88h.9a88.35,88.35,0,0,1,88,87.25A88.86,88.86,0,0,1,213.81,147.6ZM140,76a12,12,0,1,1-12-12A12,12,0,0,1,140,76ZM96,100A12,12,0,1,1,84,88,12,12,0,0,1,96,100Zm0,56a12,12,0,1,1-12-12A12,12,0,0,1,96,156Zm88-56a12,12,0,1,1-12-12A12,12,0,0,1,184,100Z"></path>
-                        </svg>
-                      </div>
-                      Web design moderno e responsivo
-                    </li>
+                <div className="rounded-[23px] bg-linear-to-r from-[#04071D] to-[#0C0E23] w-full p-6 md:p-10">
+                  <h3
+                    id="activities-title"
+                    className="font-bold text-[20px] md:text-3xl text-white leading-[120%] tracking-[-1%]"
+                  >
+                    O que eu faço
+                  </h3>
+                  <ul className="mt-6 grid grid-cols-1 gap-x-5 gap-y-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+                    {activities.map((activity) => (
+                      <li
+                        key={activity}
+                        className="flex items-start gap-3 text-sm leading-relaxed text-[#C1C2D3]"
+                      >
+                        <span aria-hidden="true" className="text-[#CBACF9]">
+                          ✓
+                        </span>
+                        {activity}
+                      </li>
+                    ))}
                   </ul>
                 </div>
-              </div>
-
-              <div
-                className="
-    relative rounded-[23px] p-px
-    bg-[linear-gradient(to_right,#3637496e,#3637497d)]
-  "
-              >
-                <div className="rounded-[23px] bg-linear-to-r from-[#04071D] to-[#0C0E23]  w-full p-10">
-                  <p className="leading-[120%] text-[#C1C2D3]">
-                    Eu estou sempre elevando meu nível.
-                  </p>
-                  <h2 className=" text-white text-[20px] md:text-3xl  font-bold leading-[120%] tracking-[-1%] mt-2.5">
-                    Minha stack de tecnologias
-                  </h2>
-                  <div className="flex flex-wrap gap-2.5 mt-4">
-                    <div className="bg-[#10132E] h-8 p-5 flex items-center justify-center rounded-[6.97px]">
-                      <p className="text-white text-sm font-semibold leading-[18.6px]">
-                        HTML
-                      </p>
-                    </div>
-                    <div className="bg-[#10132E] h-8 p-5 flex items-center justify-center rounded-[6.97px]">
-                      <p className="text-white text-sm font-semibold leading-[18.6px]">
-                        CSS
-                      </p>
-                    </div>
-                    <div className="bg-[#10132E] h-8 p-5 flex items-center justify-center rounded-[6.97px]">
-                      <p className="text-white text-sm font-semibold leading-[18.6px]">
-                        Tailwind CSS
-                      </p>
-                    </div>
-                    <div className="bg-[#10132E] h-8 p-5 flex items-center justify-center rounded-[6.97px]">
-                      <p className="text-white text-sm font-semibold leading-[18.6px]">
-                        JavaScript
-                      </p>
-                    </div>
-                    <div className="bg-[#10132E] h-8 p-5 flex items-center justify-center rounded-[6.97px]">
-                      <p className="text-white text-sm font-semibold leading-[18.6px]">
-                        TypeScript
-                      </p>
-                    </div>
-                    <div className="bg-[#10132E] h-8 p-5 flex items-center justify-center rounded-[6.97px]">
-                      <p className="text-white text-sm font-semibold leading-[18.6px]">
-                        PHP
-                      </p>
-                    </div>
-                    <div className="bg-[#10132E] h-8 p-5 flex items-center justify-center rounded-[6.97px]">
-                      <p className="text-white text-sm font-semibold leading-[18.6px]">
-                        React
-                      </p>
-                    </div>
-                    <div className="bg-[#10132E] h-8 p-5 flex items-center justify-center rounded-[6.97px]">
-                      <p className="text-white text-sm font-semibold leading-[18.6px]">
-                        Next
-                      </p>
-                    </div>
-                    <div className="bg-[#10132E] h-8 p-5 flex items-center justify-center rounded-[6.97px]">
-                      <p className="text-white text-sm font-semibold leading-[18.6px]">
-                        Git
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              </section>
+              <TechnologyStack />
             </div>
           </div>
 
@@ -170,12 +70,13 @@ export const About = () => {
                 <div className="rounded-[23px]   max-w-full w-full lg:w-[351px] overflow-hidden pt-[29px] pl-7 bg-linear-to-r from-[#04071D] to-[#0C0E23]">
                   <div className="background">
                     <h3 className="text-[20px] md:text-2xl font-bold leading-[120%] tracking-[-1%] text-white">
-                      Entusiasta de tecnologia com paixão por desenvolvimento.
+                      Desenvolvimento Front-End com atenção ao design e à
+                      experiência de uso.
                     </h3>
                     <div className="flex justify-end items-end">
                       <Image
                         src={"/section-input.svg"}
-                        alt="imagem ilustrativa"
+                        alt=""
                         width={176}
                         height={390}
                       />
@@ -194,7 +95,7 @@ export const About = () => {
                   <div className="background-blur">
                     <div className="flex justify-center items-center flex-col gap-6 pb-[34px]">
                       <h3 className="text-[24px] pt-[26px] md:text-2xl max-w-[241px] font-bold leading-[120%] tracking-[-1%] text-white">
-                        Você quer começar um projeto juntos?
+                        Conheça minha trajetória profissional
                       </h3>
                       <div
                         className="
@@ -203,15 +104,17 @@ export const About = () => {
   "
                       >
                         <a
-                          href="/Roger-Valentim-Curriculo.pdf"
-                          target="_blank"
-                          title="baixar cv"
+                          href={profile.resume}
+                          download
+                          aria-label="Baixar currículo de Roger Valentim em PDF"
                           rel="noopener noreferrer"
                           className="rounded-[7px] flex justify-center items-center gap-[5px]  bg-linear-to-r from-[#161A31] to-[#06091F] hover:bg-linear-to-r hover:from-[#1B2B6B] hover:to-[#0A0F3A]
   transition-all duration-300 max-w-[197px] h-10 w-full text-[#E4ECFF] hover:text-white leading-[120%] tracking-[-0.48px] text-sm"
                         >
                           <div>
                             <svg
+                              aria-hidden="true"
+                              focusable="false"
                               xmlns="http://www.w3.org/2000/svg"
                               width="20"
                               height="20"
@@ -221,7 +124,7 @@ export const About = () => {
                               <path d="M224,144v64a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V144a8,8,0,0,1,16,0v56H208V144a8,8,0,0,1,16,0Zm-101.66,5.66a8,8,0,0,0,11.32,0l40-40a8,8,0,0,0-11.32-11.32L136,124.69V32a8,8,0,0,0-16,0v92.69L93.66,98.34a8,8,0,0,0-11.32,11.32Z"></path>
                             </svg>
                           </div>
-                          Baixar CV
+                          Baixar currículo
                         </a>
                       </div>
                     </div>
@@ -236,26 +139,24 @@ export const About = () => {
         bg-[linear-gradient(to_right,#3637496e,#3637497d)] w-full h-auto
       "
             >
-              <div className="rounded-[23px] w-full h-[300px] lg:h-full bg-linear-to-r from-[#04071D] to-[#0C0E23]">
-                <div className="flex items-center h-full">
-                  <div className="flex flex-col items-start justify-center w-full lg:w-[50%] pl-7 lg:pl-[43px]">
+              <div className="rounded-[23px] w-full min-h-[300px] lg:h-full bg-linear-to-r from-[#04071D] to-[#0C0E23]">
+                <div className="flex items-center min-h-[300px] h-full">
+                  <div className="flex flex-col items-start justify-center w-[60%] shrink-0 py-7 pl-7 lg:w-[50%] lg:pl-[43px]">
                     <p className="text-[#E4ECFF] opacity-100 uppercase leading-[120%] tracking-[15%]">
-                      Minha Atuação Hoje
+                      Meu foco
                     </p>
-                    <h2 className="text-[20px] md:text-[32px] text-white max-w-[311px] font-bold leading-normal md:leading-[120%] mt-4 tracking-[-1%]">
-                      Atualmente desenvolvendo landing pages modernas e de alta
-                      performance
-                    </h2>
+                    <h3 className="text-[20px] md:text-[32px] text-white max-w-[311px] font-bold leading-normal md:leading-[120%] mt-4 tracking-[-1%]">
+                      Interfaces com React e Next.js, do Figma ao navegador
+                    </h3>
                   </div>
 
-                  {/* Imagem otimizada */}
-                  <div className="relative w-full lg:w-[50%] h-full rounded-br-[23px] overflow-hidden">
+                  <div className="relative w-[40%] lg:w-[50%] min-h-[300px] self-stretch rounded-br-[23px] overflow-hidden">
                     <Image
                       src="/code.png"
-                      alt="Ilustração de código"
+                      alt=""
                       fill
                       className="object-cover"
-                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      sizes="(max-width: 768px) 36vw, (max-width: 1024px) 288px, 32vw"
                     />
                   </div>
                 </div>
