@@ -73,20 +73,6 @@ export const projects: ProjectCardProps[] = [
     ],
   },
   {
-    id: "panto-furniture",
-    title: "Panto Furniture",
-    image: "/projects/panto.jpg",
-    link: "https://panto-funiture.vercel.app/",
-    description:
-      "Interface de loja de móveis construída com HTML, CSS e JavaScript, com catálogo visual e navegação por categorias de produtos.",
-    technologies: ["HTML5", "CSS3", "JavaScript"],
-    features: [
-      "Categorias de produtos",
-      "Apresentação visual do catálogo",
-      "Layout responsivo",
-    ],
-  },
-  {
     id: "green-bank",
     title: "Green Bank",
     image: "/projects/green-bank.png",
