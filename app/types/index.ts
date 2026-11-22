@@ -7,11 +7,15 @@ export interface ProjectCardProps {
   technologies: string[];
   features: string[];
   githubUrl?: string;
+  problem?: string;
+  architecture?: string;
+  highlights?: string[];
 }
 
 export interface ExperienceCardProps {
   title: string;
   description: string;
+  bullets?: string[];
   image: string;
   date: string;
 }

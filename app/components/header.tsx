@@ -1,79 +1,133 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import type { Locale } from "../i18n";
+import { getTranslations } from "../i18n";
 import { profile } from "../data/profile";
 
-export const Header = () => {
+const SECTIONS = [
+  "inicio",
+  "sobre",
+  "projetos",
+  "experiencia",
+  "contato",
+] as const;
+
+export const Header = ({ locale = "pt" }: { locale?: Locale }) => {
+  const t = getTranslations(locale);
+  const [activeSection, setActiveSection] = useState<string>("inicio");
+
+  useEffect(() => {
+    const sections = SECTIONS.map((id) => document.getElementById(id)).filter(
+      Boolean,
+    ) as HTMLElement[];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        rootMargin: "-30% 0px -69% 0px",
+        threshold: 0,
+      },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
+
+  const navLinkClass = (sectionId: string) =>
+    `relative inline-flex items-center px-2.5 sm:px-3.5 py-2 text-xs sm:text-sm font-medium tracking-[-0.02em] transition-colors duration-200 rounded-full ${
+      activeSection === sectionId
+        ? "text-[#CBACF9] bg-white/[0.06]"
+        : "text-[#C1C2D3] hover:text-white"
+    }`;
+
+  const langLinkClass = (targetLocale: Locale) =>
+    `rounded-full px-2.5 py-1 text-[11px] sm:text-xs font-semibold transition-all duration-200 ${
+      locale === targetLocale
+        ? "bg-[#CBACF9]/20 text-[#CBACF9] border border-[#CBACF9]/40"
+        : "text-[#C1C2D3] hover:text-white border border-transparent"
+    }`;
+
   return (
-    <header className="absolute inset-x-0 top-0 z-10 w-full container flex justify-center items-center pt-[50px]">
-      <nav aria-label="Navegação principal" className="bg-linear-to-r from-[#04071D] to-[#0C0E23] border-header border w-full max-w-[451px] h-16 flex justify-center items-center">
-        <ul className="flex items-center justify-between gap-3 sm:gap-4 lg:gap-8">
-          <li>
-            <a
-              href="#inicio"
-              className="inline-flex min-h-11 items-center font-medium text-[12px] sm:text-sm md:text-[16px] text-[#C1C2D3] hover:text-white tracking-[-0.48px] leading-[110%]"
-              title="Início"
-            >
-              Início
-            </a>
-          </li>
+    <>
+      <header className="fixed inset-x-0 top-5 sm:top-8 z-50 flex justify-center px-3 pointer-events-none">
+        <div className="pointer-events-auto flex items-center gap-2 sm:gap-3">
+          {/* Barra de Navegação Principal */}
+          <nav
+            aria-label={
+              locale === "pt" ? "Navegação principal" : "Main navigation"
+            }
+            className="flex items-center rounded-full border border-white/12 bg-[#04071D]/80 px-2 sm:px-3 py-1.5 backdrop-blur-md shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+          >
+            <ul className="flex items-center gap-0.5 sm:gap-1.5">
+              {SECTIONS.map((sectionId, index) => (
+                <li key={sectionId}>
+                  <a
+                    href={`#${sectionId}`}
+                    onClick={() => setActiveSection(sectionId)}
+                    className={navLinkClass(sectionId)}
+                    aria-current={
+                      activeSection === sectionId ? "location" : undefined
+                    }
+                    title={t.nav[index]}
+                  >
+                    {t.nav[index]}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
 
-          <li>
-            <a
-              href="#sobre"
-              className="inline-flex min-h-11 items-center font-medium text-[12px] sm:text-sm md:text-[16px] text-[#C1C2D3] hover:text-white tracking-[-0.48px] leading-[110%]"
-              title="Sobre"
+          {/* Seletor de Idioma integrado ao Flexbox */}
+          <div
+            role="group"
+            aria-label={
+              locale === "pt" ? "Selecionar idioma" : "Select language"
+            }
+            className="flex items-center gap-0.5 rounded-full border border-white/12 bg-[#04071D]/80 p-1 backdrop-blur-md shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+          >
+            <Link
+              href="/pt"
+              className={langLinkClass("pt")}
+              lang="pt-BR"
+              aria-current={locale === "pt" ? "page" : undefined}
             >
-              Sobre
-            </a>
-          </li>
+              PT
+            </Link>
+            <Link
+              href="/en"
+              className={langLinkClass("en")}
+              lang="en-US"
+              aria-current={locale === "en" ? "page" : undefined}
+            >
+              EN
+            </Link>
+          </div>
+        </div>
+      </header>
 
-          <li>
-            <a
-              href="#projetos"
-              className="inline-flex min-h-11 items-center font-medium text-[12px] sm:text-sm md:text-[16px] text-[#C1C2D3] hover:text-white tracking-[-0.48px] leading-[110%]"
-              title="Projetos"
-            >
-              Projetos
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="#experiencia"
-              className="inline-flex min-h-11 items-center font-medium text-[12px] sm:text-sm md:text-[16px] text-[#C1C2D3] hover:text-white tracking-[-0.48px] leading-[110%]"
-              title="Experiência"
-            >
-              Experiência
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="#contato"
-              className="inline-flex min-h-11 items-center font-medium text-[12px] sm:text-sm md:text-[16px] text-[#C1C2D3] hover:text-white tracking-[-0.48px] leading-[110%]"
-              title="Contato"
-            >
-              Contato
-            </a>
-          </li>
-        </ul>
-      </nav>
+      {/* Botão flutuante do WhatsApp fora do <header> para melhor semântica */}
       <a
         href={profile.whatsapp}
         target="_blank"
         rel="noopener noreferrer"
-        className="
-    fixed bottom-20 right-6
-    bg-[#25D366]
-    text-white
-    w-14 h-14 rounded-full
-    hidden
-    lg:flex items-center justify-center
-    shadow-lg
-    z-10
-    animate-glow
-  "
-        aria-label="Fale comigo no WhatsApp"
+        className="fixed bottom-6 right-6 z-40 hidden lg:flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-105 animate-glow"
+        aria-label={
+          locale === "pt"
+            ? "Fale comigo no WhatsApp"
+            : "Chat with me on WhatsApp"
+        }
       >
-        <svg aria-hidden="true" focusable="false"
+        <svg
+          aria-hidden="true"
+          focusable="false"
           width="28"
           height="28"
           viewBox="0 0 16 16"
@@ -86,6 +140,6 @@ export const Header = () => {
           />
         </svg>
       </a>
-    </header>
+    </>
   );
 };

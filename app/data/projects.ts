@@ -16,6 +16,16 @@ export const projects: ProjectCardProps[] = [
       "Conteúdos em destaque",
       "Integração com a API TMDB",
     ],
+    problem:
+      "Centralizar a descoberta de filmes e séries em uma interface rápida, organizada e responsiva.",
+    architecture:
+      "Next.js com App Router, TypeScript e TanStack Query para cache, sincronização e estados de carregamento das requisições à TMDB.",
+    githubUrl: "https://github.com/rogervalentim/movies-next",
+    highlights: [
+      "Busca e navegação por conteúdo",
+      "Cache de dados do servidor",
+      "Tratamento de estados de loading e erro",
+    ],
   },
   {
     id: "ifood-clone",
@@ -30,6 +40,7 @@ export const projects: ProjectCardProps[] = [
       "Cardápios e seleção de produtos",
       "Carrinho de compras",
     ],
+    githubUrl: "https://github.com/rogervalentim/ifood-fsw",
   },
   {
     id: "evogym",
@@ -43,11 +54,12 @@ export const projects: ProjectCardProps[] = [
       "Interface para desktop e mobile",
       "Conteúdo voltado a atividades físicas",
     ],
+    githubUrl: "https://github.com/rogervalentim/gym_app",
   },
   {
     id: "blog",
-    title: "Blog",
-    image: "/projects/blog.jpg",
+    title: "Landing Page SaaS",
+    image: "/projects/blog.png",
     link: "https://blog-28ma.vercel.app/",
     description:
       "Landing page com Next.js e TypeScript para apresentar uma plataforma de lojas online, com hierarquia visual e chamadas para ação.",
@@ -57,6 +69,7 @@ export const projects: ProjectCardProps[] = [
       "Chamadas para ação",
       "Layout responsivo",
     ],
+    githubUrl: "https://github.com/rogervalentim/blog",
   },
   {
     id: "panto-furniture",
@@ -71,6 +84,7 @@ export const projects: ProjectCardProps[] = [
       "Apresentação visual do catálogo",
       "Layout responsivo",
     ],
+    githubUrl: "https://github.com/rogervalentim/panto-funiture",
   },
   {
     id: "green-bank",
@@ -85,5 +99,6 @@ export const projects: ProjectCardProps[] = [
       "Seções de depoimentos e perguntas frequentes (FAQ)",
       "Layout responsivo",
     ],
+    githubUrl: "https://github.com/rogervalentim/green-bank",
   },
 ];
