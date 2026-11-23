@@ -1,9 +1,15 @@
 import type { MetadataRoute } from "next";
-import { isPreview, siteUrl } from "./lib/seo";
+
+const BASE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  "https://roger-portfolio-gamma.vercel.app";
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: { userAgent: "*", ...(isPreview ? { disallow: "/" } : { allow: "/" }) },
-    ...(isPreview ? {} : { sitemap: new URL("sitemap.xml", siteUrl).href }),
+    rules: {
+      userAgent: "*",
+      allow: "/",
+    },
+    sitemap: `${BASE_URL}/sitemap.xml`,
   };
 }

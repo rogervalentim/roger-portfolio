@@ -1,9 +1,36 @@
 import type { MetadataRoute } from "next";
-import { isPreview, siteUrl } from "./lib/seo";
+
+const BASE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  "https://roger-portfolio-gamma.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return isPreview ? [] : [
-    { url: new URL("/pt", siteUrl).href, alternates: { languages: { "pt-BR": new URL("/pt", siteUrl).href, "en-US": new URL("/en", siteUrl).href } } },
-    { url: new URL("/en", siteUrl).href, alternates: { languages: { "pt-BR": new URL("/pt", siteUrl).href, "en-US": new URL("/en", siteUrl).href } } },
+  const lastModified = new Date();
+
+  return [
+    {
+      url: `${BASE_URL}/pt`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 1,
+      alternates: {
+        languages: {
+          "pt-BR": `${BASE_URL}/pt`,
+          "en-US": `${BASE_URL}/en`,
+        },
+      },
+    },
+    {
+      url: `${BASE_URL}/en`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.9,
+      alternates: {
+        languages: {
+          "pt-BR": `${BASE_URL}/pt`,
+          "en-US": `${BASE_URL}/en`,
+        },
+      },
+    },
   ];
 }
