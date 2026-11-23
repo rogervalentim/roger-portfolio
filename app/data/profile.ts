@@ -6,7 +6,7 @@ export const profile = {
   github: "https://github.com/rogervalentim",
   linkedin: "https://www.linkedin.com/in/rogervalentim33",
   whatsapp: "https://wa.me/5511976069285",
-  email: "roger.valentim33@gmail.com",
+  email: "valentim.roger33@gmail.com",
   resume: "/curriculo-roger-valentim.pdf",
   resumeEn: "/curriculo-roger-valentim-en.pdf",
 } as const;
@@ -61,11 +61,23 @@ export const stackCategories: { title: Localized; items: string[] }[] = [
   },
   {
     title: { pt: "UI & Design Systems", en: "UI & Design Systems" },
-    items: ["Tailwind CSS", "shadcn/ui", "Radix UI", "Material UI", "Sass", "Figma"],
+    items: [
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Radix UI",
+      "Material UI",
+      "Sass",
+      "Figma",
+    ],
   },
   {
     title: { pt: "Dados & Estado", en: "Data & State" },
-    items: ["TanStack Query", "TanStack Router", "Zustand", "Next.js App Router"],
+    items: [
+      "TanStack Query",
+      "TanStack Router",
+      "Zustand",
+      "Next.js App Router",
+    ],
   },
   {
     title: { pt: "Integração & Back-end", en: "Integration & Back-End" },
