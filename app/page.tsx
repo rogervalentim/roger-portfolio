@@ -1,32 +1,39 @@
-import Image from "next/image";
-import { Header } from "./components/header";
-import { Hero } from "./components/hero";
-import { About } from "./components/about";
-import { Specialties } from "./components/specialties";
-import { Projects } from "./components/projects";
-import { Experience } from "./components/experience";
-import { Cta } from "./components/cta";
-import { Footer } from "./components/footer";
+import { About } from "./site/about";
+import { Cta } from "./site/cta";
+import { Experience } from "./site/experience";
+import { Footer } from "./site/footer";
+import { Header } from "./site/header";
+import { Hero } from "./site/hero";
+import { Projects } from "./site/projects";
 import { profileSchema } from "./lib/seo";
+import type { Locale } from "./i18n";
 
-export default function Home() {
+function Page({ locale }: { locale: Locale }) {
   return (
     <div className="relative">
-      <Header />
-      <main id="conteudo" tabIndex={-1}>
-        <div className="relative isolate w-full grid-pattern pt-[114px]">
-          <Image src="/spotlight.svg" width={805} height={608} alt="" aria-hidden="true" className="pointer-events-none absolute top-0 left-0 w-full h-auto md:max-w-[805px] md:h-[608px] -z-10" />
-          <Image src="/spotlight.svg" width={805} height={608} alt="" aria-hidden="true" className="pointer-events-none absolute top-0 right-0 w-full h-auto md:max-w-[805px] md:h-[608px] -z-10 scale-x-[-1]" />
-          <Hero />
+      <Header locale={locale} />
+      <main id="conteudo" tabIndex={-1} className="pt-14">
+        <div className="relative isolate">
+          <div
+            aria-hidden="true"
+            className="dot-grid pointer-events-none absolute inset-x-0 top-0 -z-10 h-[520px]"
+          />
+          <Hero locale={locale} />
         </div>
-        <About />
-        <Specialties />
-        <Projects />
-        <Experience />
-        <div className="pattern"><Cta /></div>
+        <About locale={locale} />
+        <Projects locale={locale} />
+        <Experience locale={locale} />
+        <Cta locale={locale} />
       </main>
-      <div className="pattern"><Footer /></div>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(profileSchema).replace(/</g, "\\u003c") }} />
+      <Footer locale={locale} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(profileSchema).replace(/</g, "\\u003c") }}
+      />
     </div>
   );
+}
+
+export default function Home() {
+  return <Page locale="pt" />;
 }

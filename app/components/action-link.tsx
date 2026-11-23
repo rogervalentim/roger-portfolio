@@ -1,18 +1,59 @@
 import type { ComponentProps } from "react";
 
-export function ArrowIcon() {
+export function ArrowIcon({ className = "" }: { className?: string }) {
   return (
-    <svg aria-hidden="true" focusable="false" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
-      <path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z" />
+    <svg
+      aria-hidden="true"
+      focusable="false"
+      width="14"
+      height="14"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.75"
+      className={className}
+    >
+      <path d="M7 17 17 7M8 7h9v9" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
 
-export function ActionLink({ children, className = "", ...props }: ComponentProps<"a">) {
+const base =
+  "inline-flex min-h-11 items-center justify-center gap-2 rounded-md px-4 text-sm font-medium leading-none transition-colors duration-200";
+
+const variants = {
+  primary: "bg-fg text-ink hover:bg-white",
+  secondary:
+    "border border-line bg-surface text-fg hover:border-line-strong hover:bg-[#16161a]",
+  ghost: "px-0 text-muted hover:text-fg",
+} as const;
+
+export function ActionLink({
+  children,
+  className = "",
+  variant = "primary",
+  ...props
+}: ComponentProps<"a"> & { variant?: keyof typeof variants }) {
   return (
-    <a {...props} className={`border-header flex min-h-[66px] items-center justify-center gap-2.5 rounded-[13px] bg-linear-to-r from-[#161A31] to-[#06091F] px-6 text-[18px] font-medium leading-[120%] tracking-[-0.48px] text-white transition-all duration-300 hover:from-[#1B2B6B] hover:to-[#0A0F3A] ${className}`}>
+    <a {...props} className={`${base} ${variants[variant]} ${className}`}>
       {children}
-      <ArrowIcon />
     </a>
+  );
+}
+
+export function ActionButton({
+  children,
+  className = "",
+  variant = "secondary",
+  ...props
+}: ComponentProps<"button"> & { variant?: keyof typeof variants }) {
+  return (
+    <button
+      type="button"
+      {...props}
+      className={`${base} cursor-pointer ${variants[variant]} ${className}`}
+    >
+      {children}
+    </button>
   );
 }

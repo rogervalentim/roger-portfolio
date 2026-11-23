@@ -1,134 +1,97 @@
+"use client";
+
 import Image from "next/image";
 import type { ProjectCardProps } from "../types";
 import { ArrowIcon } from "./action-link";
-import { TechBadge } from "./tech-badge";
+import { Meta, TechBadge } from "./badge";
 import { ProjectDetailsModal } from "./project-details-modal";
 import type { Locale } from "../i18n";
+import { getTranslations } from "../i18n";
 
-export function ProjectCard(props: ProjectCardProps & { locale?: Locale }) {
-  const locale = props.locale ?? "pt";
-  const {
-    id,
-    title,
-    description,
-    image,
-    link,
-    technologies,
-    features,
-    githubUrl,
-  } = props;
-  const englishTitles: Record<string, string> = {
-    cineverse: "CineVerse",
-    "ifood-clone": "iFood Clone",
-    evogym: "Evogym",
-    blog: "SaaS Landing Page",
-    "panto-furniture": "Panto Furniture",
-    "green-bank": "Green Bank",
-  };
-  const englishDescriptions: Record<string, string> = {
-    cineverse:
-      "A movie and TV discovery application built with Next.js and TypeScript, integrated with the TMDB API and designed responsively.",
-    "ifood-clone":
-      "A Next.js and TypeScript application that simulates meal ordering, including restaurant navigation and cart management.",
-    evogym:
-      "A responsive React and Tailwind CSS interface for the fitness segment.",
-    blog: "A Next.js and TypeScript landing page for presenting an online-store platform with clear visual hierarchy and calls to action.",
-    "panto-furniture":
-      "A furniture storefront interface built with HTML, CSS and JavaScript, featuring a visual catalog and product categories.",
-    "green-bank":
-      "A responsive Next.js and Tailwind CSS landing page for digital banking and credit-card services.",
-  };
-  const displayedTitle = locale === "en" ? (englishTitles[id] ?? title) : title;
-  const displayedDescription =
-    locale === "en" ? (englishDescriptions[id] ?? description) : description;
+export function ProjectCard({ project, locale = "pt" }: { project: ProjectCardProps; locale?: Locale }) {
+  const t = getTranslations(locale);
+  const { id, title, kicker, description, image, link, technologies, githubUrl } = project;
 
   return (
     <article
-      aria-labelledby={id + "-title"}
-      // 1. Adicionado "group" e transição suave na borda do card
-      className="group relative min-w-0 rounded-[23px] p-px bg-[linear-gradient(to_right,#3637496e,#3637497d)] transition-all duration-300 hover:bg-[linear-gradient(to_right,#CBACF966,#363749)]"
+      aria-labelledby={`${id}-title`}
+      className="group flex min-w-0 flex-col rounded-lg border border-line bg-surface transition-colors duration-300 hover:border-line-strong"
     >
-      <div className="w-full h-full py-9 px-6 bg-[linear-gradient(to_right,#04071D,#0C0E23)] rounded-[23px] flex flex-col justify-between">
-        <div>
-          <div className="relative aspect-449/319 md:aspect-auto md:h-[330px] bg-[#13162D] overflow-hidden flex justify-center items-center rounded-[14px] pt-[30px] pl-[45px] pr-[42px]">
-            {/* 2. Adicionado overflow-hidden no container interno para a imagem não vazar das bordas arredondadas */}
-            <div className="relative h-full w-full overflow-hidden rounded-[10px]">
-              <Image
-                src={image}
-                alt={"Interface do projeto " + title}
-                fill
-                // 3. Efeito de zoom suave e leve subida quando o mouse passa sobre o card (group-hover)
-                className="rounded-[10px] object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105 group-hover:-translate-y-1"
-                sizes="(max-width: 576px) 65vw, (max-width: 768px) 400px, (max-width: 1024px) 580px, (max-width: 1422px) 34vw, 490px"
-              />
-            </div>
-          </div>
-          <h3
-            id={id + "-title"}
-            className="text-[20px] md:text-[32px] font-bold text-white leading-9 tracking-[-2%] mt-9 transition-colors duration-300 group-hover:text-[#CBACF9]"
-          >
-            {displayedTitle}
-          </h3>
-          <p className="text-[#BEC1DD] text-sm mt-[18px] md:text-[20px] leading-[140%]">
-            {displayedDescription}
-          </p>
-          <ul
-            className="mt-5 flex flex-wrap gap-2"
-            aria-label={"Tecnologias de " + title}
-          >
-            {technologies.map((technology) => (
-              <li key={technology}>
-                <TechBadge>{technology}</TechBadge>
-              </li>
-            ))}
-          </ul>
-          <ul
-            className="mt-5 list-inside list-disc space-y-2 text-sm leading-relaxed text-[#C1C2D3]"
-            aria-label={"Funcionalidades de " + title}
-          >
-            {features.map((feature) => (
-              <li key={feature}>{feature}</li>
-            ))}
-          </ul>
+      {/* Moldura de janela de navegador */}
+      <div className="window-frame mx-3 mt-3 overflow-hidden border-b-0 md:mx-4 md:mt-4">
+        <div className="flex items-center gap-1.5 border-b border-line px-3 py-2">
+          <span aria-hidden="true" className="h-2 w-2 rounded-full bg-[#27272a]" />
+          <span aria-hidden="true" className="h-2 w-2 rounded-full bg-[#27272a]" />
+          <span aria-hidden="true" className="h-2 w-2 rounded-full bg-[#27272a]" />
+          <span className="ml-2 truncate font-mono text-[10px] uppercase tracking-wider text-[#52525b]">
+            {new URL(link).host}
+          </span>
         </div>
-        <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2">
+        <div className="relative aspect-[16/10] overflow-hidden bg-ink">
+          <Image
+            src={image}
+            alt={
+              locale === "en"
+                ? `Interface of the ${title.en} project`
+                : `Interface do projeto ${title.pt}`
+            }
+            fill
+            className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+            sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 560px"
+          />
+        </div>
+      </div>
+
+      <div className="flex flex-1 flex-col p-5 md:p-6">
+        <Meta>{kicker[locale]}</Meta>
+        <h3
+          id={`${id}-title`}
+          className="display mt-2 text-xl font-semibold text-fg md:text-2xl"
+        >
+          {title[locale]}
+        </h3>
+        <p className="mt-2 text-sm leading-relaxed text-muted">{description[locale]}</p>
+
+        <ul
+          className="mt-4 flex flex-wrap gap-1.5"
+          aria-label={locale === "en" ? `Technologies of ${title.en}` : `Tecnologias de ${title.pt}`}
+        >
+          {technologies.map((technology) => (
+            <li key={technology}>
+              <TechBadge>{technology}</TechBadge>
+            </li>
+          ))}
+        </ul>
+
+        <div className="mt-5 flex flex-wrap items-center gap-x-5 border-t border-line pt-4">
           <a
-            className="inline-flex min-h-11 items-center gap-2.5 text-[18px] font-medium leading-[120%] text-[#CBACF9] hover:underline"
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={"Ver projeto " + title}
+            aria-label={
+              locale === "en" ? `Open the ${title.en} project` : `Abrir o projeto ${title.pt}`
+            }
+            className="inline-flex min-h-11 items-center gap-1.5 text-sm font-medium text-fg transition-colors hover:text-accent"
           >
-            {locale === "en" ? "Live Demo" : "Ver projeto"} <ArrowIcon />
+            {t.liveDemo}
+            <ArrowIcon />
           </a>
           {githubUrl ? (
             <a
               href={githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={"Código de " + title + " no GitHub"}
-              className="inline-flex min-h-11 items-center text-[#C1C2D3] hover:text-white hover:underline"
+              aria-label={
+                locale === "en" ? `${title.en} source code on GitHub` : `Código de ${title.pt} no GitHub`
+              }
+              className="inline-flex min-h-11 items-center text-sm text-muted transition-colors hover:text-fg"
             >
-              Código-fonte
+              {t.sourceCode}
             </a>
-          ) : (
-            <span
-              className="inline-flex min-h-11 items-center text-xs text-[#8589A6]"
-              title="Repositório não informado pelo proprietário"
-            >
-              {locale === "en"
-                ? "Source code unavailable"
-                : "Código-fonte indisponível"}
-            </span>
-          )}
-          <ProjectDetailsModal
-            project={{
-              ...props,
-              title: displayedTitle,
-              description: displayedDescription,
-            }}
-            locale={locale}
-          />
+          ) : null}
+          <div className="ml-auto">
+            <ProjectDetailsModal project={project} locale={locale} />
+          </div>
         </div>
       </div>
     </article>
