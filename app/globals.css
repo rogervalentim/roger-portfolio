@@ -142,13 +142,60 @@ html:has(dialog[data-stack-dialog][open]) {
   animation: toast-in 180ms ease-out;
 }
 
+/* Entrada escalonada do Hero: só transform/opacity, com atraso máximo de 150ms. */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-enter-1,
+.hero-enter-2,
+.hero-enter-3 {
+  animation: fade-in-up 500ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-enter-1 {
+  animation-delay: 0ms;
+}
+
+.hero-enter-2 {
+  animation-delay: 75ms;
+}
+
+.hero-enter-3 {
+  animation-delay: 150ms;
+}
+
+/* Pills de stack: feedback tátil leve no hover. */
+.pill-hover {
+  transition: transform 200ms ease-out, border-color 200ms ease-out;
+}
+
+.pill-hover:hover {
+  transform: scale(1.03);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
   .animate-pulse-dot,
-  .animate-toast {
+  .animate-toast,
+  .hero-enter-1,
+  .hero-enter-2,
+  .hero-enter-3 {
     animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .pill-hover:hover {
+    transform: none;
   }
   *,
   *::before,

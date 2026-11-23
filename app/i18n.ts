@@ -2,7 +2,20 @@ export type Locale = "pt" | "en";
 
 export const translations = {
   pt: {
-    nav: ["Início", "Sobre", "Projetos", "Experiência", "Contato"],
+    nav: [
+      "Início",
+      "Sobre",
+      "Projetos",
+      "Experiência",
+      "Certificados",
+      "Contato",
+    ],
+    certificatesTitle: "Certificações & formação complementar",
+    certificatesDescription:
+      "Lista completa das certificações profissionais, ordenada da formação mais recente para a mais antiga.",
+    certificatesFilterLabel: "Filtrar certificações por trilha",
+    viewCredential: "Exibir credencial",
+    viewAttachment: "Ver certificado",
     languageLabel: "Selecionar idioma",
     availability: "Disponível para Front-End · São Paulo / Remoto",
     viewProjects: "Ver projetos",
@@ -28,14 +41,27 @@ export const translations = {
     experienceTitle: "Experiência & Formação",
     contactTitle: "Vamos falar sobre a próxima interface.",
     contactDescription:
-      "Aberto a posições Front-End júnior em São Paulo (presencial ou híbrido) e remoto. Respondo em até um dia útil.",
+      "Aberto a posições Front-End  em São Paulo (presencial ou híbrido) e remoto. Respondo em até um dia útil.",
     whatsapp: "WhatsApp",
     linkedinLabel: "LinkedIn",
     emailLabel: "E-mail",
     rights: "Todos os direitos reservados.",
   },
   en: {
-    nav: ["Home", "About", "Projects", "Experience", "Contact"],
+    nav: [
+      "Home",
+      "About",
+      "Projects",
+      "Experience",
+      "Certifications",
+      "Contact",
+    ],
+    certificatesTitle: "Certifications & continuing education",
+    certificatesDescription:
+      "Complete list of professional certifications, ordered from the newest credential to the oldest.",
+    certificatesFilterLabel: "Filter certifications by track",
+    viewCredential: "View credential",
+    viewAttachment: "View certificate",
     languageLabel: "Select language",
     availability: "Open to Front-End roles · São Paulo / Remote",
     viewProjects: "View projects",
@@ -61,7 +87,7 @@ export const translations = {
     experienceTitle: "Experience & Education",
     contactTitle: "Let's talk about the next interface.",
     contactDescription:
-      "Open to junior Front-End roles in São Paulo (on-site or hybrid) and remote. I reply within one business day.",
+      "Open to ront-End roles in São Paulo (on-site or hybrid) and remote. I reply within one business day.",
     whatsapp: "WhatsApp",
     linkedinLabel: "LinkedIn",
     emailLabel: "Email",

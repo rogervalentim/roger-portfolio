@@ -15,7 +15,7 @@ export function ProjectCard({ project, locale = "pt" }: { project: ProjectCardPr
   return (
     <article
       aria-labelledby={`${id}-title`}
-      className="group flex min-w-0 flex-col rounded-lg border border-line bg-surface transition-colors duration-300 hover:border-line-strong"
+      className="group flex h-full min-w-0 flex-col rounded-lg border border-line bg-surface transition-all duration-300 ease-out hover:-translate-y-1 hover:border-line-strong hover:shadow-lg hover:shadow-black/40"
     >
       {/* Moldura de janela de navegador */}
       <div className="window-frame mx-3 mt-3 overflow-hidden border-b-0 md:mx-4 md:mt-4">
@@ -74,7 +74,7 @@ export function ProjectCard({ project, locale = "pt" }: { project: ProjectCardPr
             className="inline-flex min-h-11 items-center gap-1.5 text-sm font-medium text-fg transition-colors hover:text-accent"
           >
             {t.liveDemo}
-            <ArrowIcon />
+            <ArrowIcon className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
           {githubUrl ? (
             <a

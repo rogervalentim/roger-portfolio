@@ -7,7 +7,7 @@ export function TechBadge({
 }) {
   return (
     <span
-      className={`inline-flex items-center rounded border border-line bg-[#18181b] px-2 py-1 text-xs leading-[1.4] text-muted-2 ${
+      className={`pill-hover inline-flex items-center rounded border border-line bg-[#18181b] px-2 py-1 text-xs leading-[1.4] text-muted-2 ${
         tone === "mono" ? "font-mono uppercase tracking-wider" : ""
       }`}
     >

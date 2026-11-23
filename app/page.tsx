@@ -1,6 +1,7 @@
 import { About } from "./site/about";
 import { Cta } from "./site/cta";
 import { Experience } from "./site/experience";
+import { Certificates } from "./site/certificates";
 import { Footer } from "./site/footer";
 import { Header } from "./site/header";
 import { Hero } from "./site/hero";
@@ -23,6 +24,7 @@ function Page({ locale }: { locale: Locale }) {
         <About locale={locale} />
         <Projects locale={locale} />
         <Experience locale={locale} />
+          <Certificates locale={locale} />
         <Cta locale={locale} />
       </main>
       <Footer locale={locale} />

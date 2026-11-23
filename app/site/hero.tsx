@@ -21,24 +21,24 @@ export const Hero = ({ locale = "pt" }: { locale?: Locale }) => {
               aria-hidden="true"
               className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse-dot"
             />
-            <span className="text-xs text-muted-2">{heroCopy.availability[locale]}</span>
+            <span className="text-xs text-muted-2 hero-enter-1">{heroCopy.availability[locale]}</span>
           </span>
           <Meta>São Paulo, BR · UTC-3</Meta>
         </div>
 
         <h1
           id="hero-title"
-          className="display mt-8 max-w-[22ch] text-[clamp(2rem,6vw,3.75rem)] font-semibold leading-[1.04] text-fg"
+          className="display hero-enter-1 mt-8 max-w-[22ch] text-[clamp(2rem,6vw,3.75rem)] font-semibold leading-[1.04] text-fg"
         >
           {heroCopy.headline}{" "}
           <span className="text-muted">{heroCopy.headlineTail[locale]}</span>
         </h1>
 
-        <p className="mt-6 max-w-[62ch] text-base leading-relaxed text-muted md:text-lg">
+        <p className="hero-enter-2 mt-6 max-w-[62ch] text-base leading-relaxed text-muted md:text-lg">
           {heroCopy.intro[locale]}
         </p>
 
-        <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+        <div className="hero-enter-3 mt-9 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
           <ActionLink href="#projetos" variant="primary" className="w-full sm:w-auto">
             {t.viewProjects}
             <ArrowIcon />
@@ -46,7 +46,7 @@ export const Hero = ({ locale = "pt" }: { locale?: Locale }) => {
           <CopyEmail email={profile.email} locale={locale} className="w-full sm:w-auto" />
         </div>
 
-        <ul className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-1">
+        <ul className="hero-enter-3 mt-8 flex flex-wrap items-center gap-x-6 gap-y-1">
           <li>
             <a
               href={profile.github}

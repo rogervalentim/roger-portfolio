@@ -14,7 +14,7 @@ export const Cta = ({ locale = "pt" }: { locale?: Locale }) => {
       className="py-16 md:py-24"
     >
       <div className="container">
-        <SectionHeading id="contact-title" index="04">
+        <SectionHeading id="contact-title" index="05">
           {t.contactTitle}
         </SectionHeading>
 
@@ -40,7 +40,7 @@ export const Cta = ({ locale = "pt" }: { locale?: Locale }) => {
           </div>
         </div>
 
-        <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-1 border-t border-line pt-5">
+        <ul className="mt-8 pb-6 md:pb-0 flex flex-wrap gap-x-6 gap-y-1 border-t border-line pt-5">
           <li>
             <a
               href={`mailto:${profile.email}`}

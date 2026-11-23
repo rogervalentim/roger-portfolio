@@ -43,7 +43,10 @@ export const projects: ProjectCardProps[] = [
   {
     id: "food-delivery",
     title: { pt: "FoodDelivery UI", en: "FoodDelivery UI" },
-    kicker: { pt: "Plataforma de pedidos e carrinho", en: "Ordering platform & cart" },
+    kicker: {
+      pt: "Plataforma de pedidos e carrinho",
+      en: "Ordering platform & cart",
+    },
     image: "/projects/ifood.jpg",
     link: "https://ifood-fsw.vercel.app/",
     description: {
@@ -80,7 +83,10 @@ export const projects: ProjectCardProps[] = [
   {
     id: "evogym",
     title: { pt: "Evogym", en: "Evogym" },
-    kicker: { pt: "Landing de academia e programas", en: "Gym & programs landing" },
+    kicker: {
+      pt: "Landing de academia e programas",
+      en: "Gym & programs landing",
+    },
     image: "/projects/evogym.jpg",
     link: "https://gym-app-mocha.vercel.app/",
     description: {
@@ -117,7 +123,10 @@ export const projects: ProjectCardProps[] = [
   {
     id: "commerceflow",
     title: { pt: "CommerceFlow", en: "CommerceFlow" },
-    kicker: { pt: "Landing page para SaaS de e-commerce", en: "E-commerce SaaS landing page" },
+    kicker: {
+      pt: "Landing page para SaaS de e-commerce",
+      en: "E-commerce SaaS landing page",
+    },
     image: "/projects/blog.png",
     link: "https://blog-28ma.vercel.app/",
     description: {
@@ -154,7 +163,10 @@ export const projects: ProjectCardProps[] = [
   {
     id: "panto-furniture",
     title: { pt: "Panto Furniture", en: "Panto Furniture" },
-    kicker: { pt: "Vitrine de móveis, sem framework", en: "Furniture storefront, no framework" },
+    kicker: {
+      pt: "Vitrine de móveis, sem framework",
+      en: "Furniture storefront, no framework",
+    },
     image: "/projects/panto.jpg",
     link: "https://panto-funiture.vercel.app/",
     description: {
@@ -250,9 +262,15 @@ export const timeline: TimelineItem[] = [
   {
     id: "anhanguera",
     kind: { pt: "Formação", en: "Education" },
-    title: { pt: "Bacharelado em Engenharia de Software", en: "B.Sc. in Software Engineering" },
+    title: {
+      pt: "Bacharelado em Engenharia de Software",
+      en: "B.Sc. in Software Engineering",
+    },
     org: { pt: "Anhanguera Educacional", en: "Anhanguera Educacional" },
-    period: { pt: "SET 2024 — 2028 · 4º semestre", en: "SEP 2024 — 2028 · 4th semester" },
+    period: {
+      pt: "SET 2024 — 2028 · 6º semestre",
+      en: "SEP 2024 — 2028 · 6th semester",
+    },
     summary: {
       pt: [
         "Arquitetura de sistemas, engenharia de requisitos e boas práticas de programação.",

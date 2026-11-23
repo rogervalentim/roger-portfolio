@@ -5,7 +5,14 @@ import Link from "next/link";
 import type { Locale } from "../i18n";
 import { getTranslations } from "../i18n";
 
-const SECTIONS = ["inicio", "sobre", "projetos", "experiencia", "contato"] as const;
+const SECTIONS = [
+  "inicio",
+  "sobre",
+  "projetos",
+  "experiencia",
+  "certificates",
+  "contato",
+] as const;
 
 export const Header = ({ locale = "pt" }: { locale?: Locale }) => {
   const t = getTranslations(locale);

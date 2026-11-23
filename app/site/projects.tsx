@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { projects } from "../data/projects";
 import { ProjectCard } from "../components/project-card";
 import { SectionHeading } from "../components/badge";
+import { Reveal } from "../components/reveal";
 import type { Locale } from "../i18n";
 import { getTranslations } from "../i18n";
 
@@ -65,8 +66,14 @@ export function Projects({ locale = "pt" }: { locale?: Locale }) {
         </div>
 
         <div className="mt-10 grid grid-cols-1 items-stretch gap-5 md:gap-6 lg:grid-cols-2">
-          {filteredProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} locale={locale} />
+          {filteredProjects.map((project, index) => (
+            <Reveal
+              key={project.id}
+              delay={Math.min(index * 75, 300)}
+              className="flex min-w-0 flex-col"
+            >
+              <ProjectCard project={project} locale={locale} />
+            </Reveal>
           ))}
         </div>
       </div>
