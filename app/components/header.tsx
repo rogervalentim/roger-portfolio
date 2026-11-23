@@ -17,6 +17,7 @@ const SECTIONS = [
 export const Header = ({ locale = "pt" }: { locale?: Locale }) => {
   const t = getTranslations(locale);
   const [activeSection, setActiveSection] = useState<string>("inicio");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const sections = SECTIONS.map((id) => document.getElementById(id)).filter(
@@ -41,32 +42,53 @@ export const Header = ({ locale = "pt" }: { locale?: Locale }) => {
     return () => observer.disconnect();
   }, []);
 
-  const navLinkClass = (sectionId: string) =>
-    `relative inline-flex items-center px-2.5 sm:px-3.5 py-2 text-xs sm:text-sm font-medium tracking-[-0.02em] transition-colors duration-200 rounded-full ${
+  // Fecha o menu mobile ao redimensionar para desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const navLinkClass = (sectionId: string, isMobile = false) =>
+    `relative inline-flex items-center transition-colors duration-200 ${
+      isMobile
+        ? "w-full px-4 py-3 text-sm font-medium rounded-xl"
+        : "px-3.5 py-2 text-sm font-medium tracking-[-0.02em] rounded-full"
+    } ${
       activeSection === sectionId
-        ? "text-[#CBACF9] bg-white/[0.06]"
-        : "text-[#C1C2D3] hover:text-white"
+        ? "text-[#CBACF9] bg-white/[0.08]"
+        : "text-[#C1C2D3] hover:text-white hover:bg-white/[0.04]"
     }`;
 
   const langLinkClass = (targetLocale: Locale) =>
-    `rounded-full px-2.5 py-1 text-[11px] sm:text-xs font-semibold transition-all duration-200 ${
+    `rounded-full px-2.5 py-1 text-xs font-semibold transition-all duration-200 ${
       locale === targetLocale
         ? "bg-[#CBACF9]/20 text-[#CBACF9] border border-[#CBACF9]/40"
         : "text-[#C1C2D3] hover:text-white border border-transparent"
     }`;
 
+  const activeIndex = SECTIONS.indexOf(
+    activeSection as (typeof SECTIONS)[number],
+  );
+  const currentSectionLabel =
+    activeIndex !== -1 ? t.nav[activeIndex] : t.nav[0];
+
   return (
     <>
-      <header className="fixed inset-x-0 top-5 sm:top-8 z-50 flex justify-center px-3 pointer-events-none">
-        <div className="pointer-events-auto flex items-center gap-2 sm:gap-3">
-          {/* Barra de Navegação Principal */}
+      <header className="fixed inset-x-0 top-4 sm:top-8 z-50 flex flex-col items-center px-4 pointer-events-none">
+        {/* ================= DESKTOP HEADER ================= */}
+        <div className="pointer-events-auto hidden md:flex items-center gap-3">
           <nav
             aria-label={
               locale === "pt" ? "Navegação principal" : "Main navigation"
             }
-            className="flex items-center rounded-full border border-white/12 bg-[#04071D]/80 px-2 sm:px-3 py-1.5 backdrop-blur-md shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+            className="flex items-center rounded-full border border-white/12 bg-[#04071D]/80 px-3 py-1.5 backdrop-blur-md shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
           >
-            <ul className="flex items-center gap-0.5 sm:gap-1.5">
+            <ul className="flex items-center gap-1.5">
               {SECTIONS.map((sectionId, index) => (
                 <li key={sectionId}>
                   <a
@@ -85,7 +107,7 @@ export const Header = ({ locale = "pt" }: { locale?: Locale }) => {
             </ul>
           </nav>
 
-          {/* Seletor de Idioma integrado ao Flexbox */}
+          {/* Seletor de Idioma Desktop */}
           <div
             role="group"
             aria-label={
@@ -111,9 +133,141 @@ export const Header = ({ locale = "pt" }: { locale?: Locale }) => {
             </Link>
           </div>
         </div>
+
+        {/* ================= MOBILE HEADER ================= */}
+        <div className="pointer-events-auto flex md:hidden w-full max-w-md items-center justify-between rounded-full border border-white/12 bg-[#04071D]/85 px-3 py-2 backdrop-blur-md shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
+          {/* Indicador da seção atual */}
+          <span className="pl-2 text-xs font-medium text-[#CBACF9] truncate">
+            {currentSectionLabel}
+          </span>
+
+          <div className="flex items-center gap-2">
+            {/* Seletor de Idioma Mobile */}
+            <div
+              role="group"
+              aria-label={
+                locale === "pt" ? "Selecionar idioma" : "Select language"
+              }
+              className="flex items-center gap-0.5 rounded-full border border-white/10 bg-white/3 p-0.5"
+            >
+              <Link
+                href="/pt"
+                className={langLinkClass("pt")}
+                lang="pt-BR"
+                aria-current={locale === "pt" ? "page" : undefined}
+              >
+                PT
+              </Link>
+              <Link
+                href="/en"
+                className={langLinkClass("en")}
+                lang="en-US"
+                aria-current={locale === "en" ? "page" : undefined}
+              >
+                EN
+              </Link>
+            </div>
+
+            {/* Botão Hambúrguer / Fechar */}
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen((prev) => !prev)}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-navigation"
+              aria-label={
+                mobileMenuOpen
+                  ? locale === "pt"
+                    ? "Fechar menu"
+                    : "Close menu"
+                  : locale === "pt"
+                    ? "Abrir menu"
+                    : "Open menu"
+              }
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-[#C1C2D3] hover:text-white transition-colors"
+            >
+              {mobileMenuOpen ? (
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M18 6 6 18" />
+                  <path d="m6 6 12 12" />
+                </svg>
+              ) : (
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <line x1="4" x2="20" y1="8" y2="8" />
+                  <line x1="4" x2="20" y1="16" y2="16" />
+                </svg>
+              )}
+            </button>
+          </div>
+        </div>
+
+        {/* ================= MOBILE DROPDOWN MENU ================= */}
+        {mobileMenuOpen && (
+          <nav
+            id="mobile-navigation"
+            aria-label={
+              locale === "pt" ? "Navegação mobile" : "Mobile navigation"
+            }
+            className="pointer-events-auto mt-2 flex md:hidden w-full max-w-md flex-col gap-1 rounded-2xl border border-white/12 bg-[#04071D]/95 p-2 backdrop-blur-xl shadow-[0_16px_40px_rgba(0,0,0,0.6)]"
+          >
+            <ul className="flex flex-col gap-1">
+              {SECTIONS.map((sectionId, index) => (
+                <li key={sectionId}>
+                  <a
+                    href={`#${sectionId}`}
+                    onClick={() => {
+                      setActiveSection(sectionId);
+                      setMobileMenuOpen(false);
+                    }}
+                    className={navLinkClass(sectionId, true)}
+                    aria-current={
+                      activeSection === sectionId ? "location" : undefined
+                    }
+                  >
+                    {t.nav[index]}
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            {/* Link do WhatsApp integrado no menu mobile */}
+            <div className="mt-1 border-t border-white/10 pt-2">
+              <a
+                href={profile.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#25D366]/15 border border-[#25D366]/30 px-4 py-2.5 text-sm font-medium text-[#25D366] transition-colors hover:bg-[#25D366]/25"
+              >
+                <span>
+                  {locale === "pt"
+                    ? "Fale comigo no WhatsApp"
+                    : "Chat on WhatsApp"}
+                </span>
+              </a>
+            </div>
+          </nav>
+        )}
       </header>
 
-      {/* Botão flutuante do WhatsApp fora do <header> para melhor semântica */}
+      {/* Botão flutuante do WhatsApp (Desktop) */}
       <a
         href={profile.whatsapp}
         target="_blank"

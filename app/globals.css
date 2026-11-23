@@ -11,15 +11,16 @@ html {
 
 body {
   font-family: var(--inter), "Inter", sans-serif;
-  color: #E4ECFF;
+  color: #e4ecff;
 }
 
 :where(a, button, summary):focus-visible {
-  outline: 2px solid #CBACF9;
+  outline: 2px solid #cbacf9;
   outline-offset: 5px;
 }
 
-section[id], main[id] {
+section[id],
+main[id] {
   scroll-margin-top: 24px;
 }
 
@@ -35,9 +36,9 @@ html {
   z-index: 50;
   transform: translateY(-180%);
   border-radius: 7px;
-  background: #10132E;
+  background: #10132e;
   padding: 12px 16px;
-  color: #E4ECFF;
+  color: #e4ecff;
 }
 
 .skip-link:focus {
@@ -134,7 +135,15 @@ html:has(dialog[data-stack-dialog][open]) {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .animate-glow, .animate-glow-white { animation: none; }
-  a, footer { transition: none; }
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-glow,
+  .animate-glow-white {
+    animation: none;
+  }
+  a,
+  footer {
+    transition: none;
+  }
 }
