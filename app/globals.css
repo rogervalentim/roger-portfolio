@@ -134,12 +134,27 @@ html:has(dialog[data-stack-dialog][open]) {
   animation: glowWhite 2.2s ease-in-out infinite;
 }
 
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
   .animate-glow,
-  .animate-glow-white {
+  .animate-glow-white,
+  .animate-float {
     animation: none;
   }
   a,

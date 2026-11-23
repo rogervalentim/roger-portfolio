@@ -39,7 +39,7 @@ export function ExperienceCard({
               alt=""
               width={94}
               height={87}
-              className="object-contain transition-transform duration-300 ease-out group-hover:scale-105 drop-shadow-[0_0_12px_rgba(168,85,247,0.25)]"
+              className="object-contain transition-transform duration-300 ease-out group-hover:scale-105"
             />
           </div>
 
