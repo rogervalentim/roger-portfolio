@@ -65,7 +65,7 @@ export function Projects({ locale = "pt" }: { locale?: Locale }) {
           </div>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 items-stretch gap-5 md:gap-6 lg:grid-cols-2">
+        <div className="mt-10 grid grid-cols-1 items-stretch gap-5 md:gap-6 md:grid-cols-2 lg:grid-cols-3">
           {filteredProjects.map((project, index) => (
             <Reveal
               key={project.id}
