@@ -4,6 +4,52 @@ import type { ProjectCardProps, TimelineItem } from "../types";
 // quando o endereço do repositório correspondente estiver confirmado.
 export const projects: ProjectCardProps[] = [
   {
+    id: "flowforge-ui",
+    title: { pt: "FlowForge UI", en: "FlowForge UI" },
+    kicker: {
+      pt: "Orquestrador visual de fluxos de IA",
+      en: "Visual AI workflow orchestrator",
+    },
+    image: "/projects/flow-forge.png",
+    link: "https://flow-forge-coral.vercel.app/",
+    description: {
+      pt: "Editor visual de pipelines de agentes de IA com canvas interativo, streaming em tempo real e Design System documentado no Storybook.",
+      en: "A visual AI agent pipeline editor with an interactive node canvas, real-time streaming console and a Storybook Design System.",
+    },
+    technologies: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Storybook",
+      "Docker",
+    ],
+    challenge: {
+      pt: "Renderizar um canvas com arraste de nós, zoom, histórico de desfazer/refazer e respostas de IA chegando dezenas de vezes por segundo sem travar a interface com re-renders em cascata.",
+      en: "Rendering a node-dragging canvas with zoom, undo/redo history and AI responses arriving dozens of times per second without choking the UI with cascading re-renders.",
+    },
+    solution: {
+      pt: "Hooks customizados sem bibliotecas externas: useCanvasViewport manipulando transformações via useRef para manter 60fps, useUndoRedo com pilhas imutáveis e useStreamResponse agrupando chunks via requestAnimationFrame com AbortController e MSW.",
+      en: "Custom hooks with zero external state libraries: useCanvasViewport driving DOM transforms via useRef for 60fps, useUndoRedo with immutable stacks and useStreamResponse batching SSE chunks through requestAnimationFrame with AbortController and MSW.",
+    },
+    uiDecisions: {
+      pt: "Estética industrial em dark mode com bordas de 1px no lugar de sombras pesadas, tipografia monospace para telemetria (TTFT, tokens/s e latência) e atalhos de teclado que respeitam campos de texto focados.",
+      en: "Industrial dark-mode palette using 1px structural borders instead of heavy shadows, monospace telemetry (TTFT, tokens/s and latency) and keyboard shortcuts that yield when text inputs are focused.",
+    },
+    highlights: {
+      pt: [
+        "Hooks avançados (useUndoRedo, useStreamResponse, useCanvasViewport)",
+        "Design System isolado no Storybook com testes de interação",
+        "Ambiente multi-stage em Docker Compose e CI/CD no GitHub Actions",
+      ],
+      en: [
+        "Advanced custom hooks (useUndoRedo, useStreamResponse, useCanvasViewport)",
+        "Isolated Storybook Design System with interaction tests",
+        "Multi-stage Docker Compose setup and GitHub Actions CI/CD",
+      ],
+    },
+    githubUrl: "https://github.com/rogervalentim/flow-forge",
+  },
+  {
     id: "cineverse",
     title: { pt: "CineVerse", en: "CineVerse" },
     kicker: { pt: "Descoberta de filmes e séries", en: "Movie & TV discovery" },
