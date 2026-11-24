@@ -93,7 +93,7 @@ export const projects: ProjectCardProps[] = [
       pt: "Página de apresentação para academia, com programas, provas sociais e formulário de contato.",
       en: "A gym presentation page with programs, social proof and a contact form.",
     },
-    technologies: ["React.js", "TypeScript", "Tailwind CSS"],
+    technologies: ["React", "TypeScript", "Tailwind CSS"],
     challenge: {
       pt: "Seções com blocos alternados de imagem e texto costumam acumular CSS duplicado e quebrar a leitura em telas médias.",
       en: "Sections with alternating image and text blocks tend to pile up duplicated CSS and break their rhythm on mid-size screens.",
